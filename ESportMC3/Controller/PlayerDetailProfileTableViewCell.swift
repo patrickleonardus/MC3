@@ -8,9 +8,12 @@
 
 import UIKit
 
-class PlayerDetailTableViewCell: UITableViewCell {
+class PlayerDetailProfileTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lblPlayerDetail: UILabel!
+    @IBOutlet weak var lblPlayerAge: UILabel!
+    @IBOutlet weak var lblPlayerGender: UILabel!
+    @IBOutlet weak var lblPlayerRank: UILabel!
     
     
 

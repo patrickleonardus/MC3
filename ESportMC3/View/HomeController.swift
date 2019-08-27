@@ -30,6 +30,8 @@ class HomeController: UIViewController {
     @IBOutlet weak var viewSearch: UIView!
     @IBOutlet weak var viewValidationDisplay: UIView!
     
+    var textField = UITextField()
+    
     var players: [Player]?
     var teams : [Team]?
     
@@ -66,18 +68,27 @@ class HomeController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(HomeController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         if viewSearch.alpha == 1 {
-            view.endEditing(false)
+            tabBarController?.tabBar.isHidden = true
         }
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
          NotificationCenter.default.removeObserver(self)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if viewSearch.alpha == 1 {
+            DispatchQueue.main.async {
+                self.searchController.searchBar.becomeFirstResponder()
+            }
+        }
+    }
     func setUpUI(){
         viewSearch.alpha = 0
         viewValidationDisplay.alpha = 0
         tableViewHome.allowsSelection = false
+        
     }
     
     @objc func btnBrowse(sender: UIButton) {
@@ -86,14 +97,14 @@ class HomeController: UIViewController {
     }
     
     @objc func keyboardWillShow(notification: Notification) {
-        if let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height {
-            print("Notification: Keyboard will show")
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height - 80
             tableViewSearch.setBottomInset(to: keyboardHeight)
         }
     }
     
     @objc func keyboardWillHide(notification: Notification) {
-        print("Notification: Keyboard will hide")
         tableViewSearch.setBottomInset(to: 0.0)
     }
     
@@ -153,8 +164,6 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
                         }
                     }
             }
-            
-                print("Check 1 : ", checkResult1, "Check 2 : ", checkResult2)
             
             default:
                 print("Something went wrong")
@@ -218,7 +227,7 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
                 height = 185
             }
             else if indexPath.section == 2{
-                height = 215
+                height = 210
             }
             
         case tableViewSearch:
@@ -408,8 +417,9 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
                 label.font = UIFont.boldSystemFont(ofSize: 17)
                 
                 let btnBrowse: UIButton = UIButton(frame: CGRect(x: frame.size.width - 110, y: 0, width: 100, height: 28))
-                btnBrowse.setTitle("Browse All >", for: [])
+                btnBrowse.setTitle("Browse All ›", for: [])
                 btnBrowse.setTitleColor(UIColor(red: 20/255, green: 126/255, blue: 251/255, alpha: 1), for: [])
+                btnBrowse.titleLabel!.font = UIFont.systemFont(ofSize: 15.0)
                 btnBrowse.addTarget(self, action: #selector(btnBrowse(sender:)), for: .touchUpInside)
                 
                 let headerView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
@@ -470,6 +480,7 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
                     let genderTemp = player.gender
                     let locationTemp = player.location
                     let descriptionTemp = player.description
+                    let rankTemp = player.rank
                     
                     UserDefaults.standard.set(imageTemp, forKey: "imageForDetail")
                     UserDefaults.standard.set(nameTemp, forKey: "nameForDetail")
@@ -478,6 +489,7 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
                     UserDefaults.standard.set(genderTemp, forKey: "genderForDetail")
                     UserDefaults.standard.set(locationTemp, forKey: "locationForDetail")
                     UserDefaults.standard.set(descriptionTemp, forKey: "descriptionForDetail")
+                    UserDefaults.standard.set(rankTemp, forKey: "rankForDetail")
                     
                     let viewController = storyboard?.instantiateViewController(withIdentifier: "playerDetail")
                     self.navigationController?.pushViewController(viewController!, animated: true)
@@ -506,6 +518,7 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
                     let genderTemp = player.gender
                     let locationTemp = player.location
                     let descriptionTemp = player.description
+                    let rankTemp = player.rank
                     
                     UserDefaults.standard.set(imageTemp, forKey: "imageForDetail")
                     UserDefaults.standard.set(nameTemp, forKey: "nameForDetail")
@@ -514,6 +527,7 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
                     UserDefaults.standard.set(genderTemp, forKey: "genderForDetail")
                     UserDefaults.standard.set(locationTemp, forKey: "locationForDetail")
                     UserDefaults.standard.set(descriptionTemp, forKey: "descriptionForDetail")
+                    UserDefaults.standard.set(rankTemp, forKey: "rankForDetail")
                     
                     let viewController = storyboard?.instantiateViewController(withIdentifier: "playerDetail")
                     self.navigationController?.pushViewController(viewController!, animated: true)
@@ -551,6 +565,7 @@ extension HomeController: PlayerListener {
         let genderTemp = player.gender
         let locationTemp = player.location
         let descriptionTemp = player.description
+        let rankTemp = player.rank
         
         UserDefaults.standard.set(imageTemp, forKey: "imageForDetail")
         UserDefaults.standard.set(nameTemp, forKey: "nameForDetail")
@@ -559,6 +574,7 @@ extension HomeController: PlayerListener {
         UserDefaults.standard.set(genderTemp, forKey: "genderForDetail")
         UserDefaults.standard.set(locationTemp, forKey: "locationForDetail")
         UserDefaults.standard.set(descriptionTemp, forKey: "descriptionForDetail")
+        UserDefaults.standard.set(rankTemp, forKey: "rankForDetail")
         
         let viewController = storyboard?.instantiateViewController(withIdentifier: "playerDetail")
         self.navigationController?.pushViewController(viewController!, animated: true)
@@ -581,7 +597,7 @@ extension HomeController : JobListener {
     
 }
 
-extension HomeController: UISearchBarDelegate {
+extension HomeController: UISearchBarDelegate, UISearchControllerDelegate {
     
     func setUpSearchBar(){
         searchController.searchBar.delegate = self
@@ -632,7 +648,9 @@ extension HomeController: UISearchBarDelegate {
     
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-       viewSearch.endEditing(true)
+        viewSearch.endEditing(true)
+        tabBarController?.tabBar.isHidden = true
+
         
     }
     
@@ -644,7 +662,13 @@ extension HomeController: UISearchBarDelegate {
         playersFilter = players
         teamsFilter = teams
         tableViewSearch.reloadData()
+        
+        tabBarController?.tabBar.isHidden = false
     
+    }
+    
+    func didPresentSearchController(_ searchController: UISearchController) {
+        self.searchController.searchBar.becomeFirstResponder()
     }
 }
 
