@@ -17,7 +17,9 @@ class RegistrationController: UITableViewController {
     @IBOutlet weak var inputDOB: UITextField!
     @IBOutlet weak var inputGender: UITextField!
     @IBOutlet weak var imageProfile: UIImageView!
+    @IBOutlet weak var inputCity: UILabel!
     
+    var cityTemp1 = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,12 @@ class RegistrationController: UITableViewController {
         setButton()
         setDatePicker()
         setGenderPicker()
+        setCityLabel()
+    }
+    
+    func setCityLabel(){
+        
+      
     }
     
     func setButton(){
@@ -112,6 +120,10 @@ class RegistrationController: UITableViewController {
         }
         
         return UITableView.automaticDimension
+    }
+    
+    @IBAction func unwindToDetail(segue : UIStoryboardSegue){
+        inputCity.text = cityTemp1
     }
     
 }

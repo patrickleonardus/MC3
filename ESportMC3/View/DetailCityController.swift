@@ -70,6 +70,7 @@ class DetailCityController: UITableViewController {
                 "Sulawesi Barat",
                 "Maluku",
                 "Papua"]
+    var cityTemp = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,11 +83,25 @@ class DetailCityController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell")
         cell?.textLabel?.text = city[indexPath.row]
         
         return cell!
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        cityTemp = city[indexPath.row]
+        performSegue(withIdentifier: "unwindToDetail", sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "unwindToDetail" {
+            let destination = segue.destination as! RegistrationController
+            destination.cityTemp1 = cityTemp
+        }
+    }
 
 }
