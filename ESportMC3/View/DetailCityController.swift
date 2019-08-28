@@ -94,13 +94,18 @@ class DetailCityController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         cityTemp = city[indexPath.row]
         performSegue(withIdentifier: "unwindToDetail", sender: self)
+        performSegue(withIdentifier: "unwindFromCity", sender: self)
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "unwindToDetail" {
-            let destination = segue.destination as! RegistrationController
+            let destination = segue.destination as! PlayerRegistrationController
             destination.cityTemp1 = cityTemp
+        }
+        else if segue.identifier == "unwindFromCity" {
+            let destination = segue.destination as! TeamRegistrationController
+            destination.cityTemp2 = cityTemp
         }
     }
 

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class RegistrationController: UITableViewController {
+class PlayerRegistrationController: UITableViewController {
     
     var genders = ["Male","Female"]
     
@@ -36,12 +36,6 @@ class RegistrationController: UITableViewController {
         setButton()
         setDatePicker()
         setGenderPicker()
-        setCityLabel()
-    }
-    
-    func setCityLabel(){
-        
-      
     }
     
     func setButton(){
@@ -99,19 +93,6 @@ class RegistrationController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if indexPath.section == 1 {
-            if indexPath.row == 1 {
-                inputDOB.becomeFirstResponder()
-            }
-            else if indexPath.row == 2 {
-                inputGender.becomeFirstResponder()
-            }
-        }
-        else if indexPath.section == 3 {
-            if indexPath.row == 0 {
-            }
-          
-        }
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -128,7 +109,7 @@ class RegistrationController: UITableViewController {
     
 }
 
-extension RegistrationController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+extension PlayerRegistrationController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
@@ -149,7 +130,7 @@ extension RegistrationController : UIImagePickerControllerDelegate, UINavigation
     }
 }
 
-extension RegistrationController : UIPickerViewDelegate, UIPickerViewDataSource {
+extension PlayerRegistrationController : UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

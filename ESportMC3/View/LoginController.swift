@@ -49,6 +49,23 @@ class LoginController: UIViewController {
     @objc func dismissKeyboard(){
         view.endEditing(true)
     }
+    
+    @IBAction func btnCreateAcc(_ sender: Any) {
+        let alert = UIAlertController(title: nil, message: "What role that you want to register?", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Register as a Player", style: .default, handler: { (action:UIAlertAction!) in
+            self.performSegue(withIdentifier: "goToRegister", sender: self)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Register as a Team", style: .default, handler: { (action:UIAlertAction!) in
+            self.performSegue(withIdentifier: "goToRegisterTeam", sender: self)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true)
+    }
+    
 
 }
 

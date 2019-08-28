@@ -502,6 +502,19 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
                     guard let teams = teams else {fatalError()}
                     let team = teams[indexPath.row]
                     
+                    let imageTemp = team.image
+                    let nameTemp = team.name
+                    let locationTemp = team.location
+                    let descTemp = team.description
+                    let aliasTemp = team.alias
+                    
+                    UserDefaults.standard.set(imageTemp, forKey: "imageForDetail")
+                    UserDefaults.standard.set(nameTemp, forKey: "nameForDetail")
+                    UserDefaults.standard.set(locationTemp, forKey: "locationForDetail")
+                    UserDefaults.standard.set(descTemp, forKey: "descriptionForDetail")
+                    UserDefaults.standard.set(aliasTemp, forKey: "aliasForDetail")
+                    
+                    
                 }
             }
             
@@ -541,8 +554,17 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
                     guard let teams = teams else {fatalError()}
                     let team = teams[indexPath.row]
                     
-    
+                    let imageTemp = team.image
+                    let nameTemp = team.name
+                    let locationTemp = team.location
+                    let descTemp = team.description
+                    let aliasTemp = team.alias
                     
+                    UserDefaults.standard.set(imageTemp, forKey: "imageForDetail")
+                    UserDefaults.standard.set(nameTemp, forKey: "nameForDetail")
+                    UserDefaults.standard.set(locationTemp, forKey: "locationForDetail")
+                    UserDefaults.standard.set(descTemp, forKey: "descriptionForDetail")
+                    UserDefaults.standard.set(aliasTemp, forKey: "aliasForDetail")
                 }
             }
             
