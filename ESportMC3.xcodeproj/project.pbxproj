@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E64F03C8231582D100AF1F9D /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F03C7231582D100AF1F9D /* RegistrationController.swift */; };
+		E64F03CA2316563D00AF1F9D /* DetailCityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F03C92316563D00AF1F9D /* DetailCityController.swift */; };
+		E64F03CE23165D1A00AF1F9D /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F03CD23165D1A00AF1F9D /* City.swift */; };
 		E68E910E230EA5BB006D1375 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68E910D230EA5BB006D1375 /* Team.swift */; };
 		E68E9110230EAEFE006D1375 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68E910F230EAEFE006D1375 /* Job.swift */; };
 		E68E9112230EFFD8006D1375 /* PlayerDetailProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68E9111230EFFD8006D1375 /* PlayerDetailProfileTableViewCell.swift */; };
@@ -33,6 +36,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E64F03C7231582D100AF1F9D /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		E64F03C92316563D00AF1F9D /* DetailCityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCityController.swift; sourceTree = "<group>"; };
+		E64F03CD23165D1A00AF1F9D /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		E68E910D230EA5BB006D1375 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		E68E910F230EAEFE006D1375 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		E68E9111230EFFD8006D1375 /* PlayerDetailProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailProfileTableViewCell.swift; sourceTree = "<group>"; };
@@ -106,9 +112,11 @@
 		E6AC2201230C081E0004ACA7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E6AC21E6230BD1460004ACA7 /* LoginController.swift */,
 				E6F3630F230D36FB008078BC /* HomeController.swift */,
 				E6AC2202230C08670004ACA7 /* PlayerDetailController.swift */,
+				E6AC21E6230BD1460004ACA7 /* LoginController.swift */,
+				E64F03C7231582D100AF1F9D /* RegistrationController.swift */,
+				E64F03C92316563D00AF1F9D /* DetailCityController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -120,6 +128,7 @@
 				E6AC21FF230BDB100004ACA7 /* Player.swift */,
 				E68E910D230EA5BB006D1375 /* Team.swift */,
 				E68E910F230EAEFE006D1375 /* Job.swift */,
+				E64F03CD23165D1A00AF1F9D /* City.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -217,9 +226,11 @@
 				E6AC21ED230BD1460004ACA7 /* ESportMC3.xcdatamodeld in Sources */,
 				E68E911A23144353006D1375 /* PlayerDetailStatisticsTableViewCell.swift in Sources */,
 				E6AC21E7230BD1460004ACA7 /* LoginController.swift in Sources */,
+				E64F03CE23165D1A00AF1F9D /* City.swift in Sources */,
 				E68E91162311A1E0006D1375 /* SearchPlayerHomeTableViewCell.swift in Sources */,
 				E6F36314230D39B5008078BC /* PlayerInsideCollectionViewCell.swift in Sources */,
 				E68E911C23152476006D1375 /* GradientImageView.swift in Sources */,
+				E64F03C8231582D100AF1F9D /* RegistrationController.swift in Sources */,
 				E6A1A434230D9CB3006B0727 /* HomeTeamTableViewCell.swift in Sources */,
 				E6A1A436230D9EFD006B0727 /* HomeJobTableViewCell.swift in Sources */,
 				E6A1A438230D9F18006B0727 /* JobInsideCollectionViewCell.swift in Sources */,
@@ -227,6 +238,7 @@
 				E6F36310230D36FB008078BC /* HomeController.swift in Sources */,
 				E6AC2200230BDB100004ACA7 /* Player.swift in Sources */,
 				E6AC21E5230BD1460004ACA7 /* AppDelegate.swift in Sources */,
+				E64F03CA2316563D00AF1F9D /* DetailCityController.swift in Sources */,
 				E68E910E230EA5BB006D1375 /* Team.swift in Sources */,
 				E6A1A432230D9C6C006B0727 /* TeamInsideCollectionViewCell.swift in Sources */,
 				E68E9110230EAEFE006D1375 /* Job.swift in Sources */,
