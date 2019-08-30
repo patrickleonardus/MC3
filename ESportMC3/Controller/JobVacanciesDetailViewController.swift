@@ -22,12 +22,13 @@ class JobVacanciesDetailViewController: UIViewController {
         let date = UILabel()
         let descrip = UILabel()
         
-        subject.text = DataManager.shared.clubNameList[0]
-        status.text = DataManager.shared.statusList[0]
-        date.text = DataManager.shared.dateList[0]
-        descrip.text = "Menawarkan pekerjaan untuk role \(DataManager.shared.roleList[0]) di tim Dota 2 kami. Jika anda tertarik, silahkan menerima tawaran kami. Setelah itu kami akan menghubungi anda lebih lanjut untuk proses selanjutnya. Terima kasih."
+        subject.text = (UserDefaults.standard.object(forKey: "subject") as! String)
+        status.text = (UserDefaults.standard.object(forKey: "status") as! String)
+        date.text = (UserDefaults.standard.object(forKey: "date") as! String)
+        descrip.text = "Menawarkan pekerjaan untuk role \(String(describing: UserDefaults.standard.object(forKey: "descrip"))) di tim Dota 2 kami. Jika anda tertarik, silahkan menerima tawaran kami. Setelah itu kami akan menghubungi anda lebih lanjut untuk proses selanjutnya. Terima kasih."
         status.font = status.font.withSize(14)
         descrip.numberOfLines = 5
+        
         
         if status.text == "Menunggu konfirmasi"{
             status.textColor = #colorLiteral(red: 1, green: 0.6235294118, blue: 0.03921568627, alpha: 1)
@@ -85,7 +86,7 @@ class JobVacanciesDetailViewController: UIViewController {
         separatorLine.anchor(top: status.bottomAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: nil, trailing: view.safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 15, left: 10, bottom: 10, right: 10), size: .init(width: 500, height: 1))
         
         //Tolak Button Constraint
-        tolak.anchor(top: descrip.bottomAnchor, leading: descrip.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 20, left: 0, bottom: 0, right: 0), size: .init(width: 180, height: 50))
+        tolak.anchor(top: descrip.bottomAnchor, leading: descrip.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 20, left: 0, bottom: 0, right: 0), size: .init(width: 180, height: 40))
         
         //Terima Button Constraint
         terima.anchor(top: tolak.topAnchor, leading: tolak.trailingAnchor, bottom: nil, trailing: descrip.trailingAnchor, padding: .init(top: 0, left: 20, bottom: 0, right: 0))

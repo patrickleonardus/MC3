@@ -77,6 +77,27 @@ extension HomeJobTableViewCell : UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let jobs = jobs else {fatalError()}
         jobDidTapListener?.didTap(job: jobs[indexPath.row])
+        
+        let job = jobs[indexPath.row]
+        let imageTemp = job.image
+        let nameTemp = job.name
+        let salaryTemp = job.salary
+        let roleTemp = job.role
+        let genderTemp = job.gender
+        let contactTemp = job.contactPerson
+        let requirementTemp = job.requirement
+        let descTemp = job.description
+        
+        UserDefaults.standard.set(imageTemp, forKey: "imageJob")
+        UserDefaults.standard.set(nameTemp, forKey: "nameJob")
+        UserDefaults.standard.set(salaryTemp, forKey: "salaryJob")
+        UserDefaults.standard.set(roleTemp, forKey: "roleJob")
+        UserDefaults.standard.set(genderTemp, forKey: "genderJob")
+        UserDefaults.standard.set(contactTemp, forKey: "contactJob")
+        UserDefaults.standard.set(requirementTemp, forKey: "requirementJob")
+        UserDefaults.standard.set(descTemp, forKey: "descJob")
+        
+        
     }
     
     
