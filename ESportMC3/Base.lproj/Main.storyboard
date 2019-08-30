@@ -2124,6 +2124,7 @@
     </scenes>
     <resources>
         <image name="BGLOGO" width="828" height="562"/>
+        <image name="Logo" width="122" height="122"/>
         <image name="list" width="30" height="30"/>
         <image name="logo" width="836" height="852"/>
         <image name="search" width="30" height="30"/>
