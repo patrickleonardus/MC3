@@ -20,6 +20,7 @@ class VacancyDetailController: UIViewController {
     @IBOutlet weak var jobRole: UILabel!
     @IBOutlet weak var jobSalary: UILabel!
     @IBOutlet weak var jobGender: UILabel!
+    @IBOutlet weak var btnApplyOutlet: UIButton!
     
     
 
@@ -40,6 +41,9 @@ class VacancyDetailController: UIViewController {
     }
     
     func setUpUI(){
+        
+        btnApplyOutlet.alpha = 0
+        
         tableView.allowsSelection = false
         tableView.tableFooterView = UIView()
         
@@ -49,6 +53,15 @@ class VacancyDetailController: UIViewController {
         
         viewProfile.layer.cornerRadius = 15
         viewProfile.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        
+        if UserDefaults.standard.string(forKey: "userRole") == "Player" {
+            btnApplyOutlet.alpha = 1
+            btnApplyOutlet.layer.shadowColor = UIColor.black.cgColor
+            btnApplyOutlet.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
+            btnApplyOutlet.layer.shadowRadius = 8
+            btnApplyOutlet.layer.shadowOpacity = 1
+            btnApplyOutlet.layer.masksToBounds = false
+        }
         
         tableView.separatorStyle = .none
     }
@@ -61,6 +74,10 @@ class VacancyDetailController: UIViewController {
         jobSalary.text = (UserDefaults.standard.object(forKey: "salaryJob") as! String)
         jobGender.text = (UserDefaults.standard.object(forKey: "genderJob") as! String)
     }
+    
+    @IBAction func btnApply(_ sender: Any) {
+    }
+    
 }
 
 

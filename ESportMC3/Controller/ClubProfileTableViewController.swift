@@ -27,6 +27,8 @@ class ClubProfileTableViewController: UITableViewController,UICollectionViewData
     
     @IBOutlet weak var jobVacancyCollectionView: UICollectionView!
     @IBOutlet weak var clubNameLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +39,17 @@ class ClubProfileTableViewController: UITableViewController,UICollectionViewData
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    func userCheck(){
+        var userCheck = UserDefaults.standard.bool(forKey: "userCheck")
+        
+        if userCheck == false {
+            
+        }
+        else if userCheck {
+            
+        }
     }
 
     // MARK: - Table view data source

@@ -48,6 +48,12 @@ class TeamRegistrationController: UITableViewController {
     
     @objc func submitAction(){
         view.endEditing(true)
+        
+        UserDefaults.standard.set(true, forKey: "userCheck")
+        UserDefaults.standard.set("Team", forKey: "userRole")
+        
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "Login")
+        self.navigationController?.pushViewController(viewController!, animated: true)
     }
     
     @objc func cancelAction(){

@@ -67,6 +67,16 @@ class LoginController: UIViewController {
         self.present(alert, animated: true)
     }
     
+    @IBAction func btnLogin(_ sender: Any) {
+        
+        if UserDefaults.standard.string(forKey: "userRole") == "Player" {
+            if txtName.text == UserDefaults.standard.string(forKey: "emailPlayer") && txtPassword.text == UserDefaults.standard.string(forKey: "passwordPlayer") {
+                performSegue(withIdentifier: "goHome", sender: self)
+            }
+        }
+        
+    }
+    
 
 }
 

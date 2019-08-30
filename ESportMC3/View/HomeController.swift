@@ -57,10 +57,9 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
-        
         setUpUI()
         setUpSearchBar()
+        checkUser()
         
     }
     
@@ -108,6 +107,24 @@ class HomeController: UIViewController {
     
     @objc func keyboardWillHide(notification: Notification) {
         tableViewSearch.setBottomInset(to: 0.0)
+    }
+    
+    func checkUser(){
+        
+        if UserDefaults.standard.bool(forKey: "userCheck") == false {
+            tabBarController?.viewControllers?.remove(at: 2)
+        }
+        
+        else if UserDefaults.standard.bool(forKey: "userCheck") == true {
+            if UserDefaults.standard.string(forKey: "userRole") == "Player" {
+                tabBarController?.viewControllers?.remove(at: 2)
+            }
+            else if UserDefaults.standard.string(forKey: "userRole") == "Team" {
+                tabBarController?.viewControllers?.remove(at: 3)
+            }
+        }
+        
+        
     }
     
 }

@@ -48,6 +48,9 @@ class PlayerDetailController: UIViewController {
     }
     
     func setUpUI(){
+        
+        btnHireNow.alpha = 0
+        
         imageDetail.layer.cornerRadius = imageDetail.frame.height/2
         imageDetail.layer.borderWidth = 1
         imageDetail.layer.borderColor = UIColor.gray.cgColor
@@ -55,11 +58,14 @@ class PlayerDetailController: UIViewController {
         profileBGView.layer.cornerRadius = 15
         profileBGView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
-        btnHireNow.layer.shadowColor = UIColor.black.cgColor
-        btnHireNow.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
-        btnHireNow.layer.shadowRadius = 8
-        btnHireNow.layer.shadowOpacity = 1
-        btnHireNow.layer.masksToBounds = false
+        if UserDefaults.standard.string(forKey: "userRole") == "Team" {
+            btnHireNow.alpha = 1
+            btnHireNow.layer.shadowColor = UIColor.black.cgColor
+            btnHireNow.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
+            btnHireNow.layer.shadowRadius = 8
+            btnHireNow.layer.shadowOpacity = 1
+            btnHireNow.layer.masksToBounds = false
+        }
         
     }
 

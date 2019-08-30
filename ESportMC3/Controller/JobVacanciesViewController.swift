@@ -10,6 +10,11 @@ import UIKit
 
 class JobVacanciesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
+    let validation = UserDefaults.standard.bool(forKey: "userCheck")
+    
+    @IBOutlet weak var viewValidation: UIView!
+    
+    
     lazy var rowsToDisplay = DataManager.shared.playerNameList
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -94,6 +99,20 @@ class JobVacanciesViewController: UIViewController, UITableViewDataSource, UITab
     
     let tableView = UITableView(frame: .zero, style: .plain)
     
+    func userCheck(){
+        if validation {
+            viewValidation.alpha = 0
+        }
+        
+        else if validation == false {
+            viewValidation.alpha = 1
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        userCheck()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -102,7 +121,7 @@ class JobVacanciesViewController: UIViewController, UITableViewDataSource, UITab
         tableView.dataSource = self
         tableView.delegate = self
         
-        view.backgroundColor = .white
+        
         navigationItem.title = "Vacancy"
         
         let paddedStackView = UIStackView(arrangedSubviews: [segmentedControl])
@@ -119,9 +138,14 @@ class JobVacanciesViewController: UIViewController, UITableViewDataSource, UITab
         stackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 0))
         
         segmentedControl.anchor(top: stackView.topAnchor, leading: stackView.leadingAnchor, bottom: tableView.topAnchor, trailing: nil, padding: .init(top: 20, left: 20, bottom: 20, right: 20))
-     //   tableView.anchor(top: nil, leading: nil, bottom: nil, trailing: nil, padding: .zero)
-        
+
+        view.bringSubviewToFront(viewValidation)
     }
+    
+    @IBAction func btnLogin(_ sender: Any) {
+        performSegue(withIdentifier: "goToLoginFromVacancy", sender: self)
+    }
+    
     
 }
 

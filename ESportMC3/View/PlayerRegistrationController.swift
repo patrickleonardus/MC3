@@ -19,6 +19,14 @@ class PlayerRegistrationController: UITableViewController {
     @IBOutlet weak var imageProfile: UIImageView!
     @IBOutlet weak var inputCity: UILabel!
     
+    @IBOutlet weak var inputFullname: UITextField!
+    @IBOutlet weak var inputEmail: UITextField!
+    @IBOutlet weak var inputPassword: UITextField!
+    @IBOutlet weak var inputPassword2: UITextField!
+    @IBOutlet weak var inputDesc: UITextView!
+    @IBOutlet weak var inputUsername: UITextField!
+    
+    
     var cityTemp1 = ""
     
     override func viewDidLoad() {
@@ -36,6 +44,13 @@ class PlayerRegistrationController: UITableViewController {
         setButton()
         setDatePicker()
         setGenderPicker()
+        setTextView()
+    }
+    
+    func setTextView(){
+        inputDesc.delegate = self
+        inputDesc.text = "required"
+        inputDesc.textColor = UIColor.lightGray
     }
     
     func setButton(){
@@ -48,6 +63,26 @@ class PlayerRegistrationController: UITableViewController {
     
     @objc func submitAction(){
         view.endEditing(true)
+        
+        let picture = imageProfile.image
+        let imageData:NSData = picture!.pngData()! as NSData
+        
+        UserDefaults.standard.set(imageData, forKey: "imagePlayer")
+        UserDefaults.standard.set(inputFullname.text, forKey: "fullnamePlayer")
+        UserDefaults.standard.set(inputEmail.text, forKey: "emailPlayer")
+        UserDefaults.standard.set(inputGender.text, forKey: "genderPlayer")
+        UserDefaults.standard.set(inputDOB.text, forKey: "dobPlayer")
+        UserDefaults.standard.set(inputPassword.text, forKey: "passwordPlayer")
+        UserDefaults.standard.set(inputCity.text, forKey: "cityPlayer")
+        UserDefaults.standard.set(inputDesc.text, forKey: "descPlayer")
+        UserDefaults.standard.set(inputUsername.text, forKey: "usernamePlayer")
+
+        UserDefaults.standard.set(true, forKey: "userCheck")
+        UserDefaults.standard.set("Player", forKey: "userRole")
+        
+        self.dismiss(animated: true, completion: nil)
+        
+        
     }
     
     @objc func cancelAction(){
@@ -149,4 +184,21 @@ extension PlayerRegistrationController : UIPickerViewDelegate, UIPickerViewDataS
     }
     
     
+}
+
+extension PlayerRegistrationController : UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if inputDesc.textColor == UIColor.lightGray {
+            inputDesc.text = nil
+            inputDesc.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if inputDesc.text.isEmpty {
+            inputDesc.text = "required"
+            inputDesc.textColor = UIColor.lightGray
+        }
+    }
 }
