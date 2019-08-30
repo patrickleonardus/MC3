@@ -15,6 +15,7 @@ class JobVacanciesDetailViewController: UIViewController {
         
         view.backgroundColor = .white
         navigationItem.title = "Details"
+        navigationItem.largeTitleDisplayMode = .never
         
         //Wording Declaration
         let subject = UILabel()

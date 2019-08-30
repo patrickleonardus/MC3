@@ -69,8 +69,9 @@ extension BrowseVacancyController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+         let cell = tableView.dequeueReusableCell(withIdentifier: "jobCell") as! BrowseJobVacancyTableViewCell
+        
         if searching == false {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "jobCell") as! BrowseJobVacancyTableViewCell
             
             jobsFilter = Job.getJobs()
             guard let jobs = jobs else {fatalError()}
@@ -102,10 +103,9 @@ extension BrowseVacancyController : UITableViewDelegate, UITableViewDataSource {
         
         else if searching == true {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "jobCell") as! BrowseJobVacancyTableViewCell
-            
             guard let jobsFilter = jobsFilter else {fatalError()}
             let job = jobsFilter[indexPath.row]
+            
             cell.inputJobName.text = job.name
             cell.inputJobRole.text = job.role
             cell.inputJobGender.text = job.gender
@@ -127,6 +127,7 @@ extension BrowseVacancyController : UITableViewDelegate, UITableViewDataSource {
             cell.inputViewJob.layer.borderColor = UIColor.gray.cgColor
             cell.inputViewJob.layer.borderWidth = 1
             
+            return cell
         }
         
       return UITableViewCell()
@@ -189,7 +190,8 @@ extension BrowseVacancyController : UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension BrowseVacancyController: UISearchBarDelegate, UISearchControllerDelegate {
+extension BrowseVacancyController: UISearchBarDelegate, UISearchControllerDelegate{
+    
     
     func setUpSearchBar(){
         searchController.searchBar.delegate = self
@@ -219,6 +221,11 @@ extension BrowseVacancyController: UISearchBarDelegate, UISearchControllerDelega
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         view.endEditing(true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        jobsFilter = jobs
+        tableViewJob.reloadData()
     }
     
 }
