@@ -11,6 +11,7 @@ import UIKit
 class LoginController: UIViewController {
 
     @IBOutlet weak var imageHeader: UIImageView!
+    
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     
