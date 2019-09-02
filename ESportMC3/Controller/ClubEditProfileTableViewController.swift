@@ -10,14 +10,17 @@ import UIKit
 
 class ClubEditProfileTableViewController: UITableViewController{
 
-    @IBOutlet var clubTextField: [UITextField]!
-    let indexTable = [[0,1,-1],[2,3,4],[5,6],[7,-1],[-1]]
+    //temp untuk menampung nilai name,alias,team
     
+    @IBOutlet var clubTextField: [UITextField]!
+    @IBOutlet weak var aboutTeamTextArea: UITextView!
+    //ket : -1 = textarea pertama,-2 = button password,-3 = label City,-4 = button logo,sisanya textfield dari array 0
+    let indexTable = [[0,1,-1,-1],[-2],[2,3],[-3],[-4]]
+    var currImageProfile:UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        clubTextField[0].text = "Nama"
-        clubTextField[1].text = "Alias"
+        
     
         
         // Uncomment the following line to preserve selection between presentations
@@ -27,82 +30,59 @@ class ClubEditProfileTableViewController: UITableViewController{
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    //set unwind segue
+//    @IBAction func unwindEditFromProfile(segue : UIStoryboardSegue){
+//        inputLocation.text = cityTemp2
+//    }
     
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-            
             tableView.deselectRow(at: indexPath, animated: true)
-        if indexTable[indexPath.section][indexPath.row] != -1  {
+        
+        if indexTable[indexPath.section][indexPath.row] == -1{
+           
+            aboutTeamTextArea.becomeFirstResponder()
+        }
+        else if indexTable[indexPath.section][indexPath.row] == -2{
+      performSegue(withIdentifier: "changePassword", sender: self)
+        }
+        else if indexTable[indexPath.section][indexPath.row] == -3{
+            //pindah ke halaman location
+        }
+        else if indexTable[indexPath.section][indexPath.row] == -4{
+         setProfilePict()
+        }
+        else
+        {
             clubTextField[indexTable[indexPath.section][indexPath.row]].becomeFirstResponder()
-            }
+        }
+   
      
     }
     // MARK: - Table view data source
 
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
 
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 0
-//    }
+}
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+extension ClubEditProfileTableViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            currImageProfile = image
+        }
+        else{
+            
+        }
+        self.dismiss(animated: true, completion: nil)
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    func setProfilePict(){
+        let image = UIImagePickerController()
+        image.delegate = self
+        image.sourceType = UIImagePickerController.SourceType.photoLibrary
+        image.allowsEditing = false
+        self.present(image,animated: true){}
+        
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

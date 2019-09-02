@@ -1,58 +1,23 @@
 //
-//  ClubProfileTableViewController.swift
-//  esNetProfilePage
+//  ChangePasswordClubTableViewController.swift
+//  ESportMC3
 //
-//  Created by Dany Hakim on 25/08/19.
-//  Copyright © 2019 Dany Hakim. All rights reserved.
+//  Created by Dany Hakim on 01/09/19.
+//  Copyright © 2019 Patrick Leonardus. All rights reserved.
 //
 
 import UIKit
 
-class ClubProfileTableViewController: UITableViewController,UICollectionViewDataSource,UICollectionViewDelegate{
-    
-    //fungsi fungsi collection view
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "jobCell", for: indexPath) as! VacancyJobCollectionViewCell
-        cell.gameNameLabel.text = "Yeuuu"
-        
-        return cell
-    }
-    
+class ChangePasswordClubTableViewController: UITableViewController {
 
-    var clubName:String = "Dany"
-    //outlet outlet
-    @IBOutlet weak var jobVacancyCollectionView: UICollectionView!
-    @IBOutlet weak var clubNameLabel: UILabel!
-    @IBOutlet weak var clubAliasLabel: UILabel!
-    @IBOutlet weak var clubLocationLabel: UILabel!
-    @IBOutlet weak var clubDescriptionLabel: UILabel!
-    @IBOutlet weak var clubFoundedLabel: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        clubNameLabel.text = clubName
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
-    
-    func userCheck(){
-        var userCheck = UserDefaults.standard.bool(forKey: "userCheck")
-        
-        if userCheck == false {
-            
-        }
-        else if userCheck {
-            
-        }
     }
 
     // MARK: - Table view data source
@@ -61,7 +26,7 @@ class ClubProfileTableViewController: UITableViewController,UICollectionViewData
 //        // #warning Incomplete implementation, return the number of sections
 //        return 0
 //    }
-
+//
 //    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        // #warning Incomplete implementation, return the number of rows
 //        return 0
@@ -123,6 +88,3 @@ class ClubProfileTableViewController: UITableViewController,UICollectionViewData
     */
 
 }
-
-
-

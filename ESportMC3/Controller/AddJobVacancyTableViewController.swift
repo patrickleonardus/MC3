@@ -10,8 +10,14 @@ import UIKit
 
 class AddJobVacancyTableViewController: UITableViewController {
 
-    @IBOutlet weak var inputLocation: UITextField!
+    @IBOutlet var postJobTextField: [UITextField]!
+    @IBOutlet weak var jobDescTextArea: UITextView!
+    @IBOutlet weak var requirementTextArea: UITextView!
+    @IBOutlet weak var jobLocationLabel: UILabel!
     var cityTemp2 = ""
+    //index dalam tiap tabel
+    //hint : -1 = textarea pertama dari atas, -2 = textarea kedua dari atas, -3 = Job Location label,sisanya index textfield dari 0
+    let indexPostJobTable = [[0,-1,-1,-2,-2,1],[2,3],[-3]]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,7 +30,30 @@ class AddJobVacancyTableViewController: UITableViewController {
     
     //set unwind segue
     @IBAction func unwindJobFromCity(segue : UIStoryboardSegue){
-        inputLocation.text = cityTemp2
+      //  inputLocation.text = cityTemp2
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        
+        if indexPostJobTable[indexPath.section][indexPath.row] == -1{
+            jobDescTextArea.becomeFirstResponder()
+        }
+        else if indexPostJobTable[indexPath.section][indexPath.row] == -2{
+            requirementTextArea.becomeFirstResponder()
+        }
+        else if indexPostJobTable[indexPath.section][indexPath.row] == -3{
+            //pindah ke halaman location
+        }
+        else
+        {
+            postJobTextField[indexPostJobTable[indexPath.section][indexPath.row]].becomeFirstResponder()
+        }
+        
+        
     }
 
     // MARK: - Table view data source
