@@ -33,8 +33,8 @@ class HomeController: UIViewController {
     
     var textField = UITextField()
     
-    var players: [Player]?
-    var teams : [Team]?
+    var players: [Player] = []
+    var teams : [Team] = []
     var jobs : [Job]?
     
     var playersFilter : [Player]?
