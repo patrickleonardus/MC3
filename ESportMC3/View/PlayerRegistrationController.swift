@@ -8,16 +8,22 @@
 
 import Foundation
 import UIKit
+import CloudKit
 
 class PlayerRegistrationController: UITableViewController {
     
     var genders = ["Male","Female"]
     
-    
+    @IBOutlet weak var inputUserName: UITextField!
+    @IBOutlet weak var inputName: UITextField!
     @IBOutlet weak var inputDOB: UITextField!
     @IBOutlet weak var inputGender: UITextField!
     @IBOutlet weak var imageProfile: UIImageView!
     @IBOutlet weak var inputCity: UILabel!
+    @IBOutlet weak var inputEmail: UITextField!
+    @IBOutlet weak var inputRetypePassword: UITextField!
+    @IBOutlet weak var inputPassword: UITextField!
+    @IBOutlet weak var inputPhone: UITextField!
     
     var cityTemp1 = ""
     
@@ -46,7 +52,27 @@ class PlayerRegistrationController: UITableViewController {
         navigationItem.leftBarButtonItem = btnCancel
     }
     
-    @objc func submitAction(){
+    @objc func submitAction() {
+        if inputPassword.text != inputRetypePassword.text {
+            print("Password not match")
+            return
+        }
+        
+        let newPlayer = CKRecord(recordType: "Players")
+        newPlayer.setValue(inputName.text, forKey: "name")
+        newPlayer.setValue(inputUserName.text, forKey: "userName")
+        newPlayer.setValue(inputCity.text, forKey: "city")
+        newPlayer.setValue(inputEmail.text, forKey: "email")
+        newPlayer.setValue(inputGender.text, forKey: "gender")
+        newPlayer.setValue("Available", forKey: "isAvailable")
+        newPlayer.setValue(inputPassword.text, forKey: "password")
+        newPlayer.setValue(inputPhone.text, forKey: "phone")
+        
+        CKContainer.default().publicCloudDatabase.save(newPlayer) { (record, error) in
+            guard record != nil else { return }
+            print("success")
+        }
+        
         view.endEditing(true)
     }
     

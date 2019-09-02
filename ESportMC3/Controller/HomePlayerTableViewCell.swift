@@ -41,8 +41,8 @@ class HomePlayerTableViewCell: UITableViewCell {
 
 extension HomePlayerTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let players = players else {fatalError()}
-        return players.count
+//        guard let players = players else {fatalError()}
+        return players!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

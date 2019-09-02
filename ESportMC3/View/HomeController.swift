@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class HomeController: UIViewController {
     
@@ -32,8 +33,8 @@ class HomeController: UIViewController {
     
     var textField = UITextField()
     
-    var players: [Player]?
-    var teams : [Team]?
+    var players: [Player] = []
+    var teams : [Team] = []
     
     var playersFilter : [Player]?
     var teamsFilter : [Team]?
@@ -52,11 +53,11 @@ class HomeController: UIViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
+        loadPlayers()
+        getClubs()
         
         setUpUI()
         setUpSearchBar()
@@ -70,6 +71,9 @@ class HomeController: UIViewController {
         if viewSearch.alpha == 1 {
             tabBarController?.tabBar.isHidden = true
         }
+        
+//        loadPlayers()
+//        getClubs()
         
     }
     
@@ -91,6 +95,97 @@ class HomeController: UIViewController {
         
     }
     
+    func loadPlayers() {
+        print(#function)
+        getPlayers()
+//        DispatchQueue.main.async {
+//            self.getPlayers()
+//        }
+    }
+    
+    func getClubs() {
+        print(#function)
+        self.teams = []
+        let query = CKQuery(recordType: "Clubs", predicate: NSPredicate(value: true))
+        
+        CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
+            guard let records = records else {
+                print("error getClub \(String(describing: error))")
+                return
+                
+            }
+            
+//            DispatchQueue.main.async {
+                for record in records {
+                    let name = record.value(forKey: "name") as! String
+                    let alias = record.value(forKey: "alias") as! String
+                    let city = record.value(forKey: "city") as! String
+                    let description = record.value(forKey: "description") as! String
+                    
+                    let team = Team(image: "Team1", name: name, location: city, description: description, alias: alias)
+                    
+                    print("club : \(name)")
+                    
+                    self.teams.append(team)
+                }
+//            }
+            
+            //reload harus di dalam closure
+            DispatchQueue.main.async {
+                self.tableViewHome.reloadData()
+                self.tableViewSearch.reloadData()
+            }
+        }
+    }
+    
+    func getPlayers() {
+        print(#function)
+        self.players = []
+        print("Player \(Date().timeIntervalSince1970)")
+        let query = CKQuery(recordType: "Players", predicate: NSPredicate(value: true))
+//        var qop = CKQueryOperation (query: query)
+//
+//        qop.resultsLimit = 5
+//        qop.queryCompletionBlock = { (c:CKQueryOperation.Cursor!, e:NSError!) -> Void in
+//            if nil != c {
+//                // there is more to do; create another op
+//                var newQop = CKQueryOperation (cursor: c!)
+//                newQop.resultsLimit = qop.resultsLimit
+//                newQop.queryCompletionBlock = qop.queryCompletionBlock
+//
+//                // Hang on to it, if we must
+//                qop = newQop
+//
+//                // submit
+//                ....addOperation(qop)
+//            }
+//            } as? (CKQueryOperation.Cursor?, Error?) -> Void
+        
+        CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
+            guard let records = records else { return }
+            print("Player DONE \(Date().timeIntervalSince1970)")
+//            DispatchQueue.main.async {
+                for record in records {
+                    let name = record.value(forKey: "name") as! String
+                    let alias = record.value(forKey: "alias") as! String
+                    let city = record.value(forKey: "city") as! String
+                    let gender = record.value(forKey: "gender") as! String
+                    let description = record.value(forKey: "description") as! String
+                    
+                    let player = Player(image: "people1", name: name, username: alias, location: city, age: "23", gender: gender, jobAvailability: "Available", description: description, rank: "Immortal")
+                    
+                    self.players.append(player)
+                }
+//            }
+            
+            //reload harus di dalam closure
+            DispatchQueue.main.async {
+                self.tableViewHome.reloadData()
+                self.tableViewSearch.reloadData()
+            }
+        }
+    }
+
     @objc func btnBrowse(sender: UIButton) {
        print("Test")
         
@@ -124,50 +219,84 @@ extension UITableView {
 extension HomeController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        players = Player.getPlayers()
-        teams = Team.getTeams()
+        //        players = Player.getPlayers()
+        //        players = getPlayers()
+        //        teams = Team.getTeams()
         
         var numberOfRow = 0
         
         switch tableView {
             
-            case tableViewHome:
-                numberOfRow = 1
+        case tableViewHome:
             
-            case tableViewSearch:
-                if section == 0{
-                    if searching == false {
-                        numberOfRow = players!.count
+            if section == 0 {
+                if players.count == 5 {
+                    numberOfRow = players.count - 4
+                } else if players.count == 4 {
+                    numberOfRow = players.count - 3
+                } else if players.count == 3 {
+                    numberOfRow = players.count - 2
+                } else if players.count == 2 {
+                    numberOfRow = players.count - 1
+                } else {
+                    numberOfRow = players.count
+                }
+                //                    numberOfRow = 1
+            }
+                
+            else if section == 1 {
+                if teams.count == 5 {
+                    numberOfRow = teams.count - 4
+                } else if teams.count == 4 {
+                    numberOfRow = teams.count - 3
+                } else if teams.count == 3 {
+                    numberOfRow = teams.count - 2
+                } else if teams.count == 2 {
+                    numberOfRow = teams.count - 1
+                } else {
+                    numberOfRow = teams.count
+                }
+                //                    numberOfRow = 1
+            }
+                
+            else if section == 2 {
+                numberOfRow = 1
+            }
+            
+        case tableViewSearch:
+            if section == 0{
+                if searching == false {
+                    numberOfRow = players.count
+                }
+                else if searching == true {
+                    numberOfRow = playersFilter!.count
+                    
+                    if numberOfRow == 0{
+                        checkResult1 = true
                     }
-                    else if searching == true {
-                        numberOfRow = playersFilter!.count
-                        
-                        if numberOfRow == 0{
-                            checkResult1 = true
-                        }
-                        else if numberOfRow > 0 {
-                            checkResult1 = false
-                        }
+                    else if numberOfRow > 0 {
+                        checkResult1 = false
                     }
                 }
-                else if section == 1{
-                    if searching == false {
-                        numberOfRow = teams!.count
+            }
+            else if section == 1{
+                if searching == false {
+                    numberOfRow = teams.count
+                }
+                else if searching == true {
+                    numberOfRow = teamsFilter!.count
+                    if numberOfRow == 0{
+                        checkResult2 = true
                     }
-                    else if searching == true {
-                        numberOfRow = teamsFilter!.count
-                        if numberOfRow == 0{
-                            checkResult2 = true
-                        }
-                        else if numberOfRow > 0 {
-                            checkResult2 = false
-                        }
+                    else if numberOfRow > 0 {
+                        checkResult2 = false
                     }
+                }
             }
             
-            default:
-                print("Something went wrong")
-            }
+        default:
+            print("Something went wrong1")
+        }
         
         return numberOfRow
     }
@@ -182,7 +311,7 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
         case tableViewSearch:
             numberOfSection = 2
         default:
-            print("Something went wrong")
+            print("Something went wrong2")
         }
         
         return numberOfSection
@@ -208,7 +337,7 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
             }
             
         default:
-            print("Something went wrong")
+            print("Something went wrong3")
         }
         
         return ""
@@ -233,7 +362,7 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
         case tableViewSearch:
             height = 120
         default:
-            print("Something went wrong")
+            print("Something went wrong4")
         }
         
         return height
@@ -245,13 +374,15 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
         case tableViewHome:
             if indexPath.section == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell") as! HomePlayerTableViewCell
-                cell.players = Player.getPlayers()
+//                cell.players = Player.getPlayers()
+                cell.players = self.players
                 cell.playerDidTapListener = self
                 //            discoverPlayer = DiscoverPlayer(name: playersImage, location: playersLocation, image: playersImage)
                 return cell
             } else if indexPath.section == 1 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "teamCell") as! HomeTeamTableViewCell
-                cell.teams = Team.getTeams()
+//                cell.teams = Team.getTeams()
+                cell.teams = self.teams
                 cell.teamDidTapListener = self
                 //            discoverTeam = DiscoverTeam(image: teamImage, name: teamName, location: teamLocation)
                 return cell
@@ -266,8 +397,8 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
             if indexPath.section == 0 {
                 if searching == false {
                     let cell = tableView.dequeueReusableCell(withIdentifier: "searchPlayerCell") as! SearchPlayerHomeTableViewCell
-                    playersFilter = Player.getPlayers()
-                    guard let players = players else {fatalError()}
+//                    playersFilter = Player.getPlayers()
+                    playersFilter = self.players
                     let player = players[indexPath.row]
                     cell.imageSearch.image = UIImage(named: player.image)
                     
@@ -307,8 +438,9 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
                 
                 if searching == false {
                     let cell = tableView.dequeueReusableCell(withIdentifier: "searchTeamCell") as! SearchTeamTableViewCell
-                    teams = Team.getTeams()
-                    guard let teams = teams else {fatalError()}
+//                    teams = Team.getTeams()
+                    teamsFilter = self.teams
+//                    guard let teams = teams else {fatalError()}
                     let team = teams[indexPath.row]
                     cell.imageSearch.image = UIImage(named: team.image)
                     
@@ -337,7 +469,7 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
                
             }
         default:
-            print("Something went wrong")
+            print("Something went wrong5")
         }
         
         return UITableViewCell()
@@ -372,7 +504,7 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
                 }
             }
         default:
-            print("Something went wrong")
+            return UITableView.automaticDimension
         }
 
         return UITableView.automaticDimension
@@ -457,7 +589,7 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
             }
             
         default:
-            print("Something went wrong")
+            print("Something went wrong7")
         }
         
         return UIView()
@@ -470,7 +602,6 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
             if searching == false {
                 if indexPath.section == 0 {
                     
-                    guard let players = players else {fatalError()}
                     let player = players[indexPath.row]
                     
                     let imageTemp = player.image
@@ -499,7 +630,7 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
                 }
                 else if indexPath.section == 1 {
                     
-                    guard let teams = teams else {fatalError()}
+//                    guard let teams = teams else {fatalError()}
                     let team = teams[indexPath.row]
                     
                     let imageTemp = team.image
@@ -551,8 +682,12 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
                 
                 else if indexPath.section == 1 {
                     
-                    guard let teams = teams else {fatalError()}
-                    let team = teams[indexPath.row]
+//                    guard let teams = teams else {fatalError()}
+//                    let team = teams[indexPath.row]
+                    
+                    guard let teamsFilter = teamsFilter else {fatalError()}
+                    let team = teamsFilter[indexPath.row]
+
                     
                     let imageTemp = team.image
                     let nameTemp = team.name
@@ -569,7 +704,7 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
             }
             
         default:
-           return  print("Something went wrong")
+           return  print("Something went wrong8")
         }
     }
     
@@ -634,8 +769,9 @@ extension HomeController: UISearchBarDelegate, UISearchControllerDelegate {
         
         searching = true
         
-        players = Player.getPlayers()
-        teams = Team.getTeams()
+//        players = Player.getPlayers()
+        //players = getPlayers()
+//        teams = Team.getTeams()
         
         guard !searchText.isEmpty else {
             playersFilter = players
@@ -645,10 +781,10 @@ extension HomeController: UISearchBarDelegate, UISearchControllerDelegate {
             return
         }
             
-        playersFilter = players!.filter({ (player) -> Bool in
+        playersFilter = players.filter({ (player) -> Bool in
             player.name.lowercased().contains(searchText.lowercased())
         })
-        teamsFilter = teams?.filter({ (team) -> Bool in
+        teamsFilter = teams.filter({ (team) -> Bool in
             team.name.lowercased().contains(searchText.lowercased())
         })
         tableViewSearch.reloadData()

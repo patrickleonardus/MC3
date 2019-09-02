@@ -12,6 +12,8 @@
 		1C4CA9D323169C16007B8FB8 /* JobVacanciesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4CA9D223169C16007B8FB8 /* JobVacanciesDetailViewController.swift */; };
 		1C4CA9D523169C36007B8FB8 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4CA9D423169C36007B8FB8 /* DataManager.swift */; };
 		1C4CA9D723169C67007B8FB8 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4CA9D623169C67007B8FB8 /* UIView+Layout.swift */; };
+		86CE79F82317B302003552B4 /* PlayerRegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CE79F72317B302003552B4 /* PlayerRegistrationController.swift */; };
+		86CE79FC2317B3D9003552B4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86CE79FB2317B3D9003552B4 /* CloudKit.framework */; };
 		E64F03CA2316563D00AF1F9D /* DetailCityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F03C92316563D00AF1F9D /* DetailCityController.swift */; };
 		E64F03CE23165D1A00AF1F9D /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F03CD23165D1A00AF1F9D /* City.swift */; };
 		E64F03D023166DF700AF1F9D /* TeamDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F03CF23166DF700AF1F9D /* TeamDetailController.swift */; };
@@ -19,7 +21,6 @@
 		E64F03D4231697B900AF1F9D /* TeamDetailProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F03D3231697B900AF1F9D /* TeamDetailProfileTableViewCell.swift */; };
 		E64F03D62316990C00AF1F9D /* TeamDetailStatisticsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F03D52316990C00AF1F9D /* TeamDetailStatisticsTableViewCell.swift */; };
 		E64F03D823169D1A00AF1F9D /* TeamDetailJobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F03D723169D1A00AF1F9D /* TeamDetailJobTableViewCell.swift */; };
-		E64F03DA23169FD000AF1F9D /* PlayerRegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F03D923169FD000AF1F9D /* PlayerRegistrationController.swift */; };
 		E68E910E230EA5BB006D1375 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68E910D230EA5BB006D1375 /* Team.swift */; };
 		E68E9110230EAEFE006D1375 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68E910F230EAEFE006D1375 /* Job.swift */; };
 		E68E9112230EFFD8006D1375 /* PlayerDetailProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68E9111230EFFD8006D1375 /* PlayerDetailProfileTableViewCell.swift */; };
@@ -51,6 +52,9 @@
 		1C4CA9D223169C16007B8FB8 /* JobVacanciesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobVacanciesDetailViewController.swift; sourceTree = "<group>"; };
 		1C4CA9D423169C36007B8FB8 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		1C4CA9D623169C67007B8FB8 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		86CE79F72317B302003552B4 /* PlayerRegistrationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerRegistrationController.swift; sourceTree = "<group>"; };
+		86CE79F92317B3BE003552B4 /* ESportMC3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ESportMC3.entitlements; sourceTree = "<group>"; };
+		86CE79FB2317B3D9003552B4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		E64F03C92316563D00AF1F9D /* DetailCityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCityController.swift; sourceTree = "<group>"; };
 		E64F03CD23165D1A00AF1F9D /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		E64F03CF23166DF700AF1F9D /* TeamDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailController.swift; sourceTree = "<group>"; };
@@ -58,7 +62,6 @@
 		E64F03D3231697B900AF1F9D /* TeamDetailProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailProfileTableViewCell.swift; sourceTree = "<group>"; };
 		E64F03D52316990C00AF1F9D /* TeamDetailStatisticsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailStatisticsTableViewCell.swift; sourceTree = "<group>"; };
 		E64F03D723169D1A00AF1F9D /* TeamDetailJobTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailJobTableViewCell.swift; sourceTree = "<group>"; };
-		E64F03D923169FD000AF1F9D /* PlayerRegistrationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerRegistrationController.swift; path = ../../../../PlayerRegistrationController.swift; sourceTree = "<group>"; };
 		E68E910D230EA5BB006D1375 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		E68E910F230EAEFE006D1375 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		E68E9111230EFFD8006D1375 /* PlayerDetailProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailProfileTableViewCell.swift; sourceTree = "<group>"; };
@@ -91,17 +94,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86CE79FC2317B3D9003552B4 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		86CE79FA2317B3D9003552B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86CE79FB2317B3D9003552B4 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E6AC21D8230BD1460004ACA7 = {
 			isa = PBXGroup;
 			children = (
 				E6AC21E3230BD1460004ACA7 /* ESportMC3 */,
 				E6AC21E2230BD1460004ACA7 /* Products */,
+				86CE79FA2317B3D9003552B4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +129,7 @@
 		E6AC21E3230BD1460004ACA7 /* ESportMC3 */ = {
 			isa = PBXGroup;
 			children = (
+				86CE79F92317B3BE003552B4 /* ESportMC3.entitlements */,
 				E6F3630A230C5C0F008078BC /* Controller */,
 				E6F36309230C5BF0008078BC /* Model */,
 				E6AC2201230C081E0004ACA7 /* View */,
@@ -132,11 +146,11 @@
 		E6AC2201230C081E0004ACA7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				86CE79F72317B302003552B4 /* PlayerRegistrationController.swift */,
 				E6F3630F230D36FB008078BC /* HomeController.swift */,
 				E6AC2202230C08670004ACA7 /* PlayerDetailController.swift */,
 				E64F03CF23166DF700AF1F9D /* TeamDetailController.swift */,
 				E6AC21E6230BD1460004ACA7 /* LoginController.swift */,
-				E64F03D923169FD000AF1F9D /* PlayerRegistrationController.swift */,
 				E64F03D1231674C900AF1F9D /* TeamRegistrationController.swift */,
 				E64F03C92316563D00AF1F9D /* DetailCityController.swift */,
 			);
@@ -213,6 +227,14 @@
 				TargetAttributes = {
 					E6AC21E0230BD1460004ACA7 = {
 						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -253,7 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6A1A43A230E61A3006B0727 /* Model.swift in Sources */,
-				E64F03DA23169FD000AF1F9D /* PlayerRegistrationController.swift in Sources */,
+				86CE79F82317B302003552B4 /* PlayerRegistrationController.swift in Sources */,
 				E6AC21ED230BD1460004ACA7 /* ESportMC3.xcdatamodeld in Sources */,
 				E64F03D62316990C00AF1F9D /* TeamDetailStatisticsTableViewCell.swift in Sources */,
 				E68E911A23144353006D1375 /* PlayerDetailStatisticsTableViewCell.swift in Sources */,
@@ -430,8 +452,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ESportMC3/ESportMC3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2NJYBE4CVL;
+				DEVELOPMENT_TEAM = CLWMV75S4M;
 				INFOPLIST_FILE = ESportMC3/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -449,8 +472,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ESportMC3/ESportMC3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2NJYBE4CVL;
+				DEVELOPMENT_TEAM = CLWMV75S4M;
 				INFOPLIST_FILE = ESportMC3/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
