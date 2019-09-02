@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C3256EF231CFFB2004B137B /* ClubEditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3256E9231CFFB1004B137B /* ClubEditProfileTableViewController.swift */; };
+		1C3256F0231CFFB2004B137B /* PlayerProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3256EA231CFFB1004B137B /* PlayerProfileTableViewController.swift */; };
+		1C3256F1231CFFB2004B137B /* PlayerEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3256EB231CFFB1004B137B /* PlayerEditTableViewController.swift */; };
+		1C3256F2231CFFB2004B137B /* VacancyJobCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3256EC231CFFB1004B137B /* VacancyJobCollectionViewCell.swift */; };
+		1C3256F3231CFFB2004B137B /* ClubProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3256ED231CFFB1004B137B /* ClubProfileTableViewController.swift */; };
+		1C3256F4231CFFB2004B137B /* AddJobVacancyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3256EE231CFFB2004B137B /* AddJobVacancyTableViewController.swift */; };
 		1C4CA9CF23169BD7007B8FB8 /* JobVacanciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4CA9CE23169BD7007B8FB8 /* JobVacanciesViewController.swift */; };
 		1C4CA9D123169BF9007B8FB8 /* CustomCellJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4CA9D023169BF9007B8FB8 /* CustomCellJob.swift */; };
 		1C4CA9D323169C16007B8FB8 /* JobVacanciesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4CA9D223169C16007B8FB8 /* JobVacanciesDetailViewController.swift */; };
@@ -65,6 +71,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C3256E9231CFFB1004B137B /* ClubEditProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubEditProfileTableViewController.swift; sourceTree = "<group>"; };
+		1C3256EA231CFFB1004B137B /* PlayerProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerProfileTableViewController.swift; sourceTree = "<group>"; };
+		1C3256EB231CFFB1004B137B /* PlayerEditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerEditTableViewController.swift; sourceTree = "<group>"; };
+		1C3256EC231CFFB1004B137B /* VacancyJobCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VacancyJobCollectionViewCell.swift; sourceTree = "<group>"; };
+		1C3256ED231CFFB1004B137B /* ClubProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubProfileTableViewController.swift; sourceTree = "<group>"; };
+		1C3256EE231CFFB2004B137B /* AddJobVacancyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddJobVacancyTableViewController.swift; sourceTree = "<group>"; };
 		1C4CA9CE23169BD7007B8FB8 /* JobVacanciesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobVacanciesViewController.swift; sourceTree = "<group>"; };
 		1C4CA9D023169BF9007B8FB8 /* CustomCellJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellJob.swift; sourceTree = "<group>"; };
 		1C4CA9D223169C16007B8FB8 /* JobVacanciesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobVacanciesDetailViewController.swift; sourceTree = "<group>"; };
@@ -204,15 +216,10 @@
 		E6F3630A230C5C0F008078BC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1C3256EE231CFFB2004B137B /* AddJobVacancyTableViewController.swift */,
 				E6D0F2B5231D027300D63500 /* ChangePasswordClubTableViewController.swift */,
+				1C3256EA231CFFB1004B137B /* PlayerProfileTableViewController.swift */,
 				E68159E8231CFF510039DDFF /* PlayerEditTableViewController.swift */,
-				E68159E0231CFDC40039DDFF /* AddJobVacancyTableViewController.swift */,
-				E68159DC231CFDC40039DDFF /* ClubEditProfileTableViewController.swift */,
-				E68159DB231CFDC40039DDFF /* ClubProfileTableViewController.swift */,
-				E68159DD231CFDC40039DDFF /* PlayerProfileAboutMeTableViewCell.swift */,
-				E68159DE231CFDC40039DDFF /* PlayerProfileStatisticsTableViewCell.swift */,
-				E68159DF231CFDC40039DDFF /* PlayerProfileTableViewController.swift */,
-				E68159DA231CFDC40039DDFF /* VacancyJobCollectionViewCell.swift */,
 				E68E9111230EFFD8006D1375 /* PlayerDetailProfileTableViewCell.swift */,
 				E68E911923144353006D1375 /* PlayerDetailStatisticsTableViewCell.swift */,
 				E64F03D3231697B900AF1F9D /* TeamDetailProfileTableViewCell.swift */,
@@ -312,8 +319,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6A1A43A230E61A3006B0727 /* Model.swift in Sources */,
+				1C3256F3231CFFB2004B137B /* ClubProfileTableViewController.swift in Sources */,
 				E64F03DC2316A52E00AF1F9D /* PlayerRegistrationController.swift in Sources */,
-				E6D0F2BC231D757800D63500 /* TeamProfileController.swift in Sources */,
 				E6AC21ED230BD1460004ACA7 /* ESportMC3.xcdatamodeld in Sources */,
 				E6D0F2C0231D891E00D63500 /* JobDetailTableViewCell.swift in Sources */,
 				E68E911A23144353006D1375 /* PlayerDetailStatisticsTableViewCell.swift in Sources */,
@@ -327,6 +334,8 @@
 				1C4CA9CF23169BD7007B8FB8 /* JobVacanciesViewController.swift in Sources */,
 				E64F03CE23165D1A00AF1F9D /* City.swift in Sources */,
 				1C4CA9D323169C16007B8FB8 /* JobVacanciesDetailViewController.swift in Sources */,
+				1C3256F4231CFFB2004B137B /* AddJobVacancyTableViewController.swift in Sources */,
+				1C3256F2231CFFB2004B137B /* VacancyJobCollectionViewCell.swift in Sources */,
 				E68E91162311A1E0006D1375 /* SearchPlayerHomeTableViewCell.swift in Sources */,
 				E68159E7231CFDC50039DDFF /* AddJobVacancyTableViewController.swift in Sources */,
 				E6F36314230D39B5008078BC /* PlayerInsideCollectionViewCell.swift in Sources */,
@@ -351,6 +360,7 @@
 				E64F03D4231697B900AF1F9D /* TeamDetailProfileTableViewCell.swift in Sources */,
 				E64F03CA2316563D00AF1F9D /* DetailCityController.swift in Sources */,
 				E68E910E230EA5BB006D1375 /* Team.swift in Sources */,
+				1C3256EF231CFFB2004B137B /* ClubEditProfileTableViewController.swift in Sources */,
 				E6A1A432230D9C6C006B0727 /* TeamInsideCollectionViewCell.swift in Sources */,
 				E68E9110230EAEFE006D1375 /* Job.swift in Sources */,
 				E68E9112230EFFD8006D1375 /* PlayerDetailProfileTableViewCell.swift in Sources */,
@@ -507,7 +517,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2NJYBE4CVL;
+				DEVELOPMENT_TEAM = 457ZW8268A;
 				INFOPLIST_FILE = ESportMC3/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -526,7 +536,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2NJYBE4CVL;
+				DEVELOPMENT_TEAM = 457ZW8268A;
 				INFOPLIST_FILE = ESportMC3/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
