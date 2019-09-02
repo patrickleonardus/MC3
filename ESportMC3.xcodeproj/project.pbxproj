@@ -18,7 +18,7 @@
 		1C4CA9D323169C16007B8FB8 /* JobVacanciesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4CA9D223169C16007B8FB8 /* JobVacanciesDetailViewController.swift */; };
 		1C4CA9D523169C36007B8FB8 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4CA9D423169C36007B8FB8 /* DataManager.swift */; };
 		1C4CA9D723169C67007B8FB8 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4CA9D623169C67007B8FB8 /* UIView+Layout.swift */; };
-		86CE79F82317B302003552B4 /* PlayerRegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CE79F72317B302003552B4 /* PlayerRegistrationController.swift */; };
+		864B9BF8231D3C2600DD257E /* ClubTeamProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 864B9BF7231D3C2600DD257E /* ClubTeamProfile.storyboard */; };
 		86CE79FC2317B3D9003552B4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86CE79FB2317B3D9003552B4 /* CloudKit.framework */; };
 		E64F03CA2316563D00AF1F9D /* DetailCityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F03C92316563D00AF1F9D /* DetailCityController.swift */; };
 		E64F03CE23165D1A00AF1F9D /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F03CD23165D1A00AF1F9D /* City.swift */; };
@@ -84,6 +84,7 @@
 		1C4CA9D223169C16007B8FB8 /* JobVacanciesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobVacanciesDetailViewController.swift; sourceTree = "<group>"; };
 		1C4CA9D423169C36007B8FB8 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		1C4CA9D623169C67007B8FB8 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		864B9BF7231D3C2600DD257E /* ClubTeamProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ClubTeamProfile.storyboard; sourceTree = "<group>"; };
 		86CE79F72317B302003552B4 /* PlayerRegistrationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerRegistrationController.swift; sourceTree = "<group>"; };
 		86CE79F92317B3BE003552B4 /* ESportMC3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ESportMC3.entitlements; sourceTree = "<group>"; };
 		86CE79FB2317B3D9003552B4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -183,6 +184,7 @@
 		E6AC2201230C081E0004ACA7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				864B9BF7231D3C2600DD257E /* ClubTeamProfile.storyboard */,
 				E6F3630F230D36FB008078BC /* HomeController.swift */,
 				E6AC2202230C08670004ACA7 /* PlayerDetailController.swift */,
 				E64F03CF23166DF700AF1F9D /* TeamDetailController.swift */,
