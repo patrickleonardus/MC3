@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class TeamRegistrationController: UITableViewController {
 
@@ -22,6 +23,12 @@ class TeamRegistrationController: UITableViewController {
     @IBOutlet weak var inputPhone: UITextField!
     
     
+    @IBOutlet weak var inputName: UITextField!
+    @IBOutlet weak var inputAlias: UITextField!
+    @IBOutlet weak var inputYear: UITextField!
+    @IBOutlet weak var inputEmail: UITextField!
+    @IBOutlet weak var inputPassword: UITextField!
+    @IBOutlet weak var inputRetypePassword: UITextField!
     var cityTemp2 = ""
     
     override func viewDidLoad() {
@@ -53,7 +60,24 @@ class TeamRegistrationController: UITableViewController {
         navigationItem.leftBarButtonItem = btnCancel
     }
     
-    @objc func submitAction(){
+    @objc func submitAction() {
+        if inputPassword.text != inputRetypePassword.text {
+            print("Password not match")
+            return
+        }
+        
+        let newClub = CKRecord(recordType: "Clubs")
+        newClub.setValue(inputName.text, forKey: "name")
+        newClub.setValue(inputAlias.text, forKey: "alias")
+        newClub.setValue(inputCity.text, forKey: "city")
+        newClub.setValue(inputEmail.text, forKey: "email")
+        newClub.setValue(inputPassword.text, forKey: "password")
+        newClub.setValue("Professional eSports Club", forKey: "description")
+        
+        CKContainer.default().publicCloudDatabase.save(newClub) { (record, error) in
+            guard record != nil else { return }
+            print("success")
+        }
         view.endEditing(true)
         
         let picture = imageProfile.image

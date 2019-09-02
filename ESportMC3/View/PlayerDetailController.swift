@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class PlayerDetailController: UIViewController {
 
@@ -19,8 +20,6 @@ class PlayerDetailController: UIViewController {
     @IBOutlet weak var profileBGView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnHireNow: UIButton!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +39,33 @@ class PlayerDetailController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
     }
     
+//    func getPlayer(id : String) -> Player {
+//        var player: Player
+//        let recordId = CKRecord.ID(recordName: id)
+//        CKContainer.default().publicCloudDatabase.fetch(withRecordID: recordId) { record, error in
+//            if error != nil {
+//                return
+//            }
+//
+//            let name = record!.value(forKey: "name") as! String
+//            let alias = record!.value(forKey: "alias") as! String
+//            let city = record!.value(forKey: "city") as! String
+//            let gender = record!.value(forKey: "gender") as! String
+//            let description = record!.value(forKey: "description") as! String
+//
+//            player = Player(image: "people1", name: name, username: alias, location: city, age: "19", gender: gender, jobAvailability: "Available", description: description, rank: "Immortal")
+//        }
+//
+//        return player
+//    }
+    
     func loadPlayerData(){
+//        let player = getPlayer(id: "7D3B4A15-3A69-8E28-8A81-801D48FA1513")
+//        imageDetail.image = UIImage(named: UserDefaults.standard.object(forKey: "imageForDetail") as! String)
+//        nameDetail.text = player.name
+//        usernameDetail.text = player.username
+//        locationDetail.text = "⌾ " + (player.location)
+        
         imageDetail.image = UIImage(named: UserDefaults.standard.object(forKey: "imageForDetail") as! String)
         nameDetail.text = UserDefaults.standard.object(forKey: "nameForDetail") as? String
         usernameDetail.text = UserDefaults.standard.object(forKey: "userForDetail") as? String

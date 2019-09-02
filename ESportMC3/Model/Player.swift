@@ -18,6 +18,9 @@ struct Player{
     var jobAvailability : String?
     var description : String?
     var rank : String?
+    var dateOfBirth : String?
+    var password : String?
+    var email : String?
     
     
     init(image: String, name: String, location: String, jobAvailability : String) {
