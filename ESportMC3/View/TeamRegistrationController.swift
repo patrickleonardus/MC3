@@ -12,6 +12,7 @@ import CloudKit
 class TeamRegistrationController: UITableViewController {
 
     
+    @IBOutlet weak var inputAboutTeam: UITextView!
     @IBOutlet weak var imageProfile: UIImageView!
     @IBOutlet weak var inputCity: UILabel!
     
@@ -35,6 +36,13 @@ class TeamRegistrationController: UITableViewController {
         imageProfile.layer.borderColor = UIColor.gray.cgColor
         tableView.tableFooterView = UIView()
         setButton()
+        setTextView()
+    }
+    
+    func setTextView(){
+        inputAboutTeam.delegate = self
+        inputAboutTeam.text = "required"
+        inputAboutTeam.textColor = UIColor.lightGray
     }
     
     func setButton(){
@@ -118,5 +126,23 @@ extension TeamRegistrationController : UIImagePickerControllerDelegate, UINaviga
         image.allowsEditing = false
         self.present(image,animated: true){}
         
+    }
+}
+
+
+extension TeamRegistrationController : UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if inputAboutTeam.textColor == UIColor.lightGray {
+            inputAboutTeam.text = nil
+            inputAboutTeam.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if inputAboutTeam.text.isEmpty {
+            inputAboutTeam.text = "required"
+            inputAboutTeam.textColor = UIColor.lightGray
+        }
     }
 }

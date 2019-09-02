@@ -11,9 +11,14 @@ import UIKit
 class TeamDetailJobTableViewCell: UITableViewCell {
     
     
+    @IBOutlet weak var lblJobName: UILabel!
+    @IBOutlet weak var lblJobRange: UILabel!
+    @IBOutlet weak var lblJobRole: UILabel!
+    @IBOutlet weak var lblJobGender: UILabel!
+    
+    @IBOutlet weak var view: UIView!
     
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

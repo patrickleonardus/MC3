@@ -33,8 +33,9 @@ class HomeController: UIViewController {
     
     var textField = UITextField()
     
-    var players: [Player] = []
-    var teams : [Team] = []
+    var players: [Player]?
+    var teams : [Team]?
+    var jobs : [Job]?
     
     var playersFilter : [Player]?
     var teamsFilter : [Team]?
@@ -187,7 +188,8 @@ class HomeController: UIViewController {
     }
 
     @objc func btnBrowse(sender: UIButton) {
-       print("Test")
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "vacancySearch")
+        self.navigationController?.pushViewController(viewController!, animated: true)
         
     }
     
@@ -645,6 +647,10 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
                     UserDefaults.standard.set(descTemp, forKey: "descriptionForDetail")
                     UserDefaults.standard.set(aliasTemp, forKey: "aliasForDetail")
                     
+                    let viewController = storyboard?.instantiateViewController(withIdentifier: "teamDetail")
+                    self.navigationController?.pushViewController(viewController!, animated: true)
+                    
+                    tableView.deselectRow(at: indexPath, animated: true)
                     
                 }
             }
@@ -700,6 +706,11 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
                     UserDefaults.standard.set(locationTemp, forKey: "locationForDetail")
                     UserDefaults.standard.set(descTemp, forKey: "descriptionForDetail")
                     UserDefaults.standard.set(aliasTemp, forKey: "aliasForDetail")
+                    
+                    let viewController = storyboard?.instantiateViewController(withIdentifier: "teamDetail")
+                    self.navigationController?.pushViewController(viewController!, animated: true)
+                    
+                    tableView.deselectRow(at: indexPath, animated: true)
                 }
             }
             
@@ -743,12 +754,32 @@ extension HomeController: PlayerListener {
 
 extension HomeController: TeamListener {
     func didTap(team: Team) {
+        
+        let imageTemp = team.image
+        let nameTemp = team.name
+        let locationTemp = team.location
+        let descTemp = team.description
+        let aliasTemp = team.alias
+        
+        UserDefaults.standard.set(imageTemp, forKey: "imageForDetail")
+        UserDefaults.standard.set(nameTemp, forKey: "nameForDetail")
+        UserDefaults.standard.set(locationTemp, forKey: "locationForDetail")
+        UserDefaults.standard.set(descTemp, forKey: "descriptionForDetail")
+        UserDefaults.standard.set(aliasTemp, forKey: "aliasForDetail")
+        
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "teamDetail")
+        self.navigationController?.pushViewController(viewController!, animated: true)
+        
         //do something here
     }
 }
 
 extension HomeController : JobListener {
     func didTap(job: Job) {
+        
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "jobDetail")
+        self.navigationController?.pushViewController(viewController!, animated: true)
+        
         //do something here
     }
     

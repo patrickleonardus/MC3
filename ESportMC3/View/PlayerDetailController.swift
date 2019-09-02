@@ -34,6 +34,7 @@ class PlayerDetailController: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
     }

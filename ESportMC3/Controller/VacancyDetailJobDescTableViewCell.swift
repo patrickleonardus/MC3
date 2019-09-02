@@ -1,15 +1,19 @@
 //
-//  TeamDetailStatisticsTableViewCell.swift
+//  JobDetailTableViewCell.swift
 //  ESportMC3
 //
-//  Created by Patrick Leonardus on 28/08/19.
+//  Created by Patrick Leonardus on 29/08/19.
 //  Copyright © 2019 Patrick Leonardus. All rights reserved.
 //
 
 import UIKit
 
-class TeamDetailStatisticsTableViewCell: UITableViewCell {
+class VacancyDetailJobDescTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var inputText: UITextView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
