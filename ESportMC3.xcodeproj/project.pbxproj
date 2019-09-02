@@ -54,6 +54,8 @@
 		E6AC21F2230BD1470004ACA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6AC21F0230BD1470004ACA7 /* LaunchScreen.storyboard */; };
 		E6AC2200230BDB100004ACA7 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC21FF230BDB100004ACA7 /* Player.swift */; };
 		E6AC2203230C08670004ACA7 /* PlayerDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC2202230C08670004ACA7 /* PlayerDetailController.swift */; };
+		E6D0F2B6231D027300D63500 /* ChangePasswordClubTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F2B5231D027300D63500 /* ChangePasswordClubTableViewController.swift */; };
+		E6D0F2B8231D027E00D63500 /* ClubTeamProfilev2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6D0F2B7231D027E00D63500 /* ClubTeamProfilev2.storyboard */; };
 		E6F36310230D36FB008078BC /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3630F230D36FB008078BC /* HomeController.swift */; };
 		E6F36312230D3976008078BC /* HomePlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F36311230D3976008078BC /* HomePlayerTableViewCell.swift */; };
 		E6F36314230D39B5008078BC /* PlayerInsideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F36313230D39B5008078BC /* PlayerInsideCollectionViewCell.swift */; };
@@ -109,6 +111,8 @@
 		E6AC21F3230BD1470004ACA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6AC21FF230BDB100004ACA7 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		E6AC2202230C08670004ACA7 /* PlayerDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailController.swift; sourceTree = "<group>"; };
+		E6D0F2B5231D027300D63500 /* ChangePasswordClubTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordClubTableViewController.swift; sourceTree = "<group>"; };
+		E6D0F2B7231D027E00D63500 /* ClubTeamProfilev2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ClubTeamProfilev2.storyboard; sourceTree = "<group>"; };
 		E6F3630F230D36FB008078BC /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		E6F36311230D3976008078BC /* HomePlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePlayerTableViewCell.swift; sourceTree = "<group>"; };
 		E6F36313230D39B5008078BC /* PlayerInsideCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInsideCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 		E6AC2201230C081E0004ACA7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E6D0F2B7231D027E00D63500 /* ClubTeamProfilev2.storyboard */,
 				E68159D6231CFDA90039DDFF /* ChangePasswordController.swift */,
 				E68159D4231CFDA90039DDFF /* ClubTeamProfile.storyboard */,
 				E68159D5231CFDA90039DDFF /* PlayerProfileController.swift */,
@@ -192,6 +197,7 @@
 		E6F3630A230C5C0F008078BC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E6D0F2B5231D027300D63500 /* ChangePasswordClubTableViewController.swift */,
 				E68159E8231CFF510039DDFF /* PlayerEditTableViewController.swift */,
 				E68159E0231CFDC40039DDFF /* AddJobVacancyTableViewController.swift */,
 				E68159DC231CFDC40039DDFF /* ClubEditProfileTableViewController.swift */,
@@ -284,6 +290,7 @@
 				E6AC21F2230BD1470004ACA7 /* LaunchScreen.storyboard in Resources */,
 				E6AC21EF230BD1470004ACA7 /* Assets.xcassets in Resources */,
 				E6AC21EA230BD1460004ACA7 /* Main.storyboard in Resources */,
+				E6D0F2B8231D027E00D63500 /* ClubTeamProfilev2.storyboard in Resources */,
 				E68159D7231CFDA90039DDFF /* ClubTeamProfile.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,6 +308,7 @@
 				E68E911A23144353006D1375 /* PlayerDetailStatisticsTableViewCell.swift in Sources */,
 				E64F03D023166DF700AF1F9D /* TeamDetailController.swift in Sources */,
 				E68159E5231CFDC50039DDFF /* PlayerProfileStatisticsTableViewCell.swift in Sources */,
+				E6D0F2B6231D027300D63500 /* ChangePasswordClubTableViewController.swift in Sources */,
 				E6AC21E7230BD1460004ACA7 /* LoginController.swift in Sources */,
 				E68159E3231CFDC50039DDFF /* ClubEditProfileTableViewController.swift in Sources */,
 				E68159E9231CFF510039DDFF /* PlayerEditTableViewController.swift in Sources */,
