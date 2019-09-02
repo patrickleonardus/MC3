@@ -51,7 +51,7 @@ class CustomCellJob: UITableViewCell {
         self.addSubview(statusView)
         self.addSubview(dateView)
         
-        subjectView.anchor(top: self.topAnchor, leading: nil, bottom: nil, trailing: nil, padding: .init(top: 10, left: 0, bottom: 0, right: 0), size: .init(width: 400, height: 20))
+        subjectView.anchor(top: self.topAnchor, leading: self.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 10, left: 20, bottom: 0, right: 0), size: .init(width: 400, height: 20))
         
         descripView.anchor(top: self.subjectView.bottomAnchor, leading: self.subjectView.leadingAnchor, bottom: self.statusView.topAnchor, trailing: self.subjectView.trailingAnchor, padding: .init(top: 20, left: 0, bottom: 0, right: 40), size: .init(width: 400, height: 0))
         descripView.heightAnchor.constraint(equalTo: self.subjectView.heightAnchor).isActive = true

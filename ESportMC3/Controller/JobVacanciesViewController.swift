@@ -116,10 +116,10 @@ class JobVacanciesViewController: UIViewController, UITableViewDataSource, UITab
         
         view.addSubview(stackView)
         
-        stackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 0))
+        stackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 20))
         
-        segmentedControl.anchor(top: stackView.topAnchor, leading: stackView.leadingAnchor, bottom: tableView.topAnchor, trailing: nil, padding: .init(top: 20, left: 20, bottom: 20, right: 20))
-     //   tableView.anchor(top: nil, leading: nil, bottom: nil, trailing: nil, padding: .zero)
+        segmentedControl.anchor(top: stackView.topAnchor, leading: stackView.leadingAnchor, bottom: tableView.topAnchor, trailing: stackView.trailingAnchor, padding: .init(top: 20, left: 20, bottom: 20, right: 20))
+        tableView.anchor(top: nil, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: nil, trailing: view.safeAreaLayoutGuide.trailingAnchor, padding: .zero)
         
     }
     
