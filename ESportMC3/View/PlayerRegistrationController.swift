@@ -31,11 +31,8 @@ class PlayerRegistrationController: UITableViewController {
 //    @IBOutlet weak var inputPhone: UITextField!
     
     @IBOutlet weak var inputFullname: UITextField!
-    @IBOutlet weak var inputEmail: UITextField!
-    @IBOutlet weak var inputPassword: UITextField!
     @IBOutlet weak var inputPassword2: UITextField!
     @IBOutlet weak var inputDesc: UITextView!
-    @IBOutlet weak var inputUsername: UITextField!
     
     
     var cityTemp1 = ""

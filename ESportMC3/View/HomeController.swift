@@ -73,8 +73,8 @@ class HomeController: UIViewController {
             tabBarController?.tabBar.isHidden = true
         }
         
-//        loadPlayers()
-//        getClubs()
+        loadPlayers()
+        getClubs()
         
     }
     
@@ -252,7 +252,17 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
         case tableViewHome:
             
             if section == 0 {
-                if players.count == 5 {
+                if players.count == 10 {
+                    numberOfRow = players.count - 9
+                } else if players.count == 9 {
+                    numberOfRow = players.count - 8
+                } else if players.count == 8 {
+                    numberOfRow = players.count - 7
+                } else if players.count == 7 {
+                    numberOfRow = players.count - 6
+                } else if players.count == 6 {
+                    numberOfRow = players.count - 5
+                } else if players.count == 5 {
                     numberOfRow = players.count - 4
                 } else if players.count == 4 {
                     numberOfRow = players.count - 3
@@ -267,7 +277,17 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
             }
                 
             else if section == 1 {
-                if teams.count == 5 {
+                if teams.count == 10 {
+                    numberOfRow = teams.count - 9
+                } else if teams.count == 9 {
+                    numberOfRow = teams.count - 8
+                } else if teams.count == 8 {
+                    numberOfRow = teams.count - 7
+                } else if teams.count == 7 {
+                    numberOfRow = teams.count - 6
+                } else if teams.count == 6 {
+                    numberOfRow = teams.count - 5
+                } else if teams.count == 5 {
                     numberOfRow = teams.count - 4
                 } else if teams.count == 4 {
                     numberOfRow = teams.count - 3

@@ -23,11 +23,6 @@ class TeamRegistrationController: UITableViewController {
     @IBOutlet weak var inputPhone: UITextField!
     
     
-    @IBOutlet weak var inputName: UITextField!
-    @IBOutlet weak var inputAlias: UITextField!
-    @IBOutlet weak var inputYear: UITextField!
-    @IBOutlet weak var inputEmail: UITextField!
-    @IBOutlet weak var inputPassword: UITextField!
     @IBOutlet weak var inputRetypePassword: UITextField!
     
     var cityTemp2 = ""

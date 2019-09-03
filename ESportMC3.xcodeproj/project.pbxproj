@@ -7,21 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C3256EF231CFFB2004B137B /* ClubEditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3256E9231CFFB1004B137B /* ClubEditProfileTableViewController.swift */; };
-		1C3256F0231CFFB2004B137B /* PlayerProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3256EA231CFFB1004B137B /* PlayerProfileTableViewController.swift */; };
-		1C3256F1231CFFB2004B137B /* PlayerEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3256EB231CFFB1004B137B /* PlayerEditTableViewController.swift */; };
-		1C3256F2231CFFB2004B137B /* VacancyJobCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3256EC231CFFB1004B137B /* VacancyJobCollectionViewCell.swift */; };
-		1C3256F3231CFFB2004B137B /* ClubProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3256ED231CFFB1004B137B /* ClubProfileTableViewController.swift */; };
 		1C3256F4231CFFB2004B137B /* AddJobVacancyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3256EE231CFFB2004B137B /* AddJobVacancyTableViewController.swift */; };
 		1C4CA9CF23169BD7007B8FB8 /* JobVacanciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4CA9CE23169BD7007B8FB8 /* JobVacanciesViewController.swift */; };
 		1C4CA9D123169BF9007B8FB8 /* CustomCellJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4CA9D023169BF9007B8FB8 /* CustomCellJob.swift */; };
 		1C4CA9D323169C16007B8FB8 /* JobVacanciesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4CA9D223169C16007B8FB8 /* JobVacanciesDetailViewController.swift */; };
 		1C4CA9D523169C36007B8FB8 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4CA9D423169C36007B8FB8 /* DataManager.swift */; };
 		1C4CA9D723169C67007B8FB8 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4CA9D623169C67007B8FB8 /* UIView+Layout.swift */; };
-		864B9BF8231D3C2600DD257E /* ClubTeamProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 864B9BF7231D3C2600DD257E /* ClubTeamProfile.storyboard */; };
 		8656C4B3231E5D2D00918B3D /* HttpClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8656C4B2231E5D2D00918B3D /* HttpClientManager.swift */; };
 		8656C4B5231E5DD200918B3D /* OpenDota.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8656C4B4231E5DD200918B3D /* OpenDota.swift */; };
 		8656C4B7231E5E5D00918B3D /* PlayerStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8656C4B6231E5E5D00918B3D /* PlayerStatistic.swift */; };
+		8686726F231E9381007D332B /* VacancyDetailJobDescTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86867267231E9380007D332B /* VacancyDetailJobDescTableViewCell.swift */; };
+		86867270231E9381007D332B /* PlayerEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86867268231E9380007D332B /* PlayerEditTableViewController.swift */; };
+		86867271231E9381007D332B /* PlayerProfileAboutMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86867269231E9380007D332B /* PlayerProfileAboutMeTableViewCell.swift */; };
+		86867272231E9381007D332B /* ClubProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8686726A231E9380007D332B /* ClubProfileTableViewController.swift */; };
+		86867273231E9381007D332B /* BrowseJobVacancyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8686726B231E9380007D332B /* BrowseJobVacancyTableViewCell.swift */; };
+		86867274231E9381007D332B /* PlayerProfileStatisticsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8686726C231E9381007D332B /* PlayerProfileStatisticsTableViewCell.swift */; };
+		86867275231E9381007D332B /* ClubEditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8686726D231E9381007D332B /* ClubEditProfileTableViewController.swift */; };
+		86867276231E9381007D332B /* VacancyJobCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8686726E231E9381007D332B /* VacancyJobCollectionViewCell.swift */; };
+		8686727D231E938B007D332B /* VacancyDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86867277231E938B007D332B /* VacancyDetailController.swift */; };
+		8686727E231E938B007D332B /* BrowseVacancyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86867278231E938B007D332B /* BrowseVacancyController.swift */; };
+		8686727F231E938B007D332B /* PlayerProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86867279231E938B007D332B /* PlayerProfileController.swift */; };
+		86867280231E938B007D332B /* PlayerRegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8686727A231E938B007D332B /* PlayerRegistrationController.swift */; };
+		86867281231E938B007D332B /* ClubTeamProfilev2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8686727B231E938B007D332B /* ClubTeamProfilev2.storyboard */; };
+		86867282231E938B007D332B /* ChangePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8686727C231E938B007D332B /* ChangePasswordController.swift */; };
 		86CE79FC2317B3D9003552B4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86CE79FB2317B3D9003552B4 /* CloudKit.framework */; };
 		E64F03CA2316563D00AF1F9D /* DetailCityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F03C92316563D00AF1F9D /* DetailCityController.swift */; };
 		E64F03CE23165D1A00AF1F9D /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F03CD23165D1A00AF1F9D /* City.swift */; };
@@ -29,22 +37,21 @@
 		E64F03D2231674C900AF1F9D /* TeamRegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F03D1231674C900AF1F9D /* TeamRegistrationController.swift */; };
 		E64F03D4231697B900AF1F9D /* TeamDetailProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F03D3231697B900AF1F9D /* TeamDetailProfileTableViewCell.swift */; };
 		E64F03D823169D1A00AF1F9D /* TeamDetailJobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F03D723169D1A00AF1F9D /* TeamDetailJobTableViewCell.swift */; };
-		E64F03DC2316A52E00AF1F9D /* PlayerRegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F03DB2316A52D00AF1F9D /* PlayerRegistrationController.swift */; };
-		E64F03E02317AC2400AF1F9D /* BrowseVacancyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F03DF2317AC2400AF1F9D /* BrowseVacancyController.swift */; };
-		E64F03E22317B0E100AF1F9D /* BrowseJobVacancyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F03E12317B0E100AF1F9D /* BrowseJobVacancyTableViewCell.swift */; };
-		E64F03E42317DE2200AF1F9D /* VacancyDetailJobDescTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F03E32317DE2200AF1F9D /* VacancyDetailJobDescTableViewCell.swift */; };
-		E64F03E62317ED6100AF1F9D /* VacancyDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F03E52317ED6100AF1F9D /* VacancyDetailController.swift */; };
-		E68159D7231CFDA90039DDFF /* ClubTeamProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E68159D4231CFDA90039DDFF /* ClubTeamProfile.storyboard */; };
-		E68159D8231CFDA90039DDFF /* PlayerProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68159D5231CFDA90039DDFF /* PlayerProfileController.swift */; };
-		E68159D9231CFDA90039DDFF /* ChangePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68159D6231CFDA90039DDFF /* ChangePasswordController.swift */; };
-		E68159E1231CFDC50039DDFF /* VacancyJobCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68159DA231CFDC40039DDFF /* VacancyJobCollectionViewCell.swift */; };
-		E68159E2231CFDC50039DDFF /* ClubProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68159DB231CFDC40039DDFF /* ClubProfileTableViewController.swift */; };
-		E68159E3231CFDC50039DDFF /* ClubEditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68159DC231CFDC40039DDFF /* ClubEditProfileTableViewController.swift */; };
-		E68159E4231CFDC50039DDFF /* PlayerProfileAboutMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68159DD231CFDC40039DDFF /* PlayerProfileAboutMeTableViewCell.swift */; };
-		E68159E5231CFDC50039DDFF /* PlayerProfileStatisticsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68159DE231CFDC40039DDFF /* PlayerProfileStatisticsTableViewCell.swift */; };
-		E68159E6231CFDC50039DDFF /* PlayerProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68159DF231CFDC40039DDFF /* PlayerProfileTableViewController.swift */; };
-		E68159E7231CFDC50039DDFF /* AddJobVacancyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68159E0231CFDC40039DDFF /* AddJobVacancyTableViewController.swift */; };
-		E68159E9231CFF510039DDFF /* PlayerEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68159E8231CFF510039DDFF /* PlayerEditTableViewController.swift */; };
+		E64F03E02317AC2400AF1F9D /* (null) in Sources */ = {isa = PBXBuildFile; };
+		E64F03E22317B0E100AF1F9D /* (null) in Sources */ = {isa = PBXBuildFile; };
+		E64F03E42317DE2200AF1F9D /* (null) in Sources */ = {isa = PBXBuildFile; };
+		E64F03E62317ED6100AF1F9D /* (null) in Sources */ = {isa = PBXBuildFile; };
+		E68159D7231CFDA90039DDFF /* (null) in Resources */ = {isa = PBXBuildFile; };
+		E68159D8231CFDA90039DDFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		E68159D9231CFDA90039DDFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		E68159E1231CFDC50039DDFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		E68159E2231CFDC50039DDFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		E68159E3231CFDC50039DDFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		E68159E4231CFDC50039DDFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		E68159E5231CFDC50039DDFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		E68159E6231CFDC50039DDFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		E68159E7231CFDC50039DDFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		E68159E9231CFF510039DDFF /* (null) in Sources */ = {isa = PBXBuildFile; };
 		E68E910E230EA5BB006D1375 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68E910D230EA5BB006D1375 /* Team.swift */; };
 		E68E9110230EAEFE006D1375 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68E910F230EAEFE006D1375 /* Job.swift */; };
 		E68E9112230EFFD8006D1375 /* PlayerDetailProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68E9111230EFFD8006D1375 /* PlayerDetailProfileTableViewCell.swift */; };
@@ -66,8 +73,6 @@
 		E6AC2200230BDB100004ACA7 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC21FF230BDB100004ACA7 /* Player.swift */; };
 		E6AC2203230C08670004ACA7 /* PlayerDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC2202230C08670004ACA7 /* PlayerDetailController.swift */; };
 		E6D0F2B6231D027300D63500 /* ChangePasswordClubTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F2B5231D027300D63500 /* ChangePasswordClubTableViewController.swift */; };
-		E6D0F2B8231D027E00D63500 /* ClubTeamProfilev2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6D0F2B7231D027E00D63500 /* ClubTeamProfilev2.storyboard */; };
-		E6D0F2BC231D757800D63500 /* TeamProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F2BB231D757800D63500 /* TeamProfileController.swift */; };
 		E6D0F2BE231D7F1500D63500 /* TeamProfileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F2BD231D7F1500D63500 /* TeamProfileViewCell.swift */; };
 		E6D0F2C0231D891E00D63500 /* JobDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F2BF231D891E00D63500 /* JobDetailTableViewCell.swift */; };
 		E6F36310230D36FB008078BC /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3630F230D36FB008078BC /* HomeController.swift */; };
@@ -76,11 +81,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1C3256E9231CFFB1004B137B /* ClubEditProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubEditProfileTableViewController.swift; sourceTree = "<group>"; };
 		1C3256EA231CFFB1004B137B /* PlayerProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerProfileTableViewController.swift; sourceTree = "<group>"; };
-		1C3256EB231CFFB1004B137B /* PlayerEditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerEditTableViewController.swift; sourceTree = "<group>"; };
-		1C3256EC231CFFB1004B137B /* VacancyJobCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VacancyJobCollectionViewCell.swift; sourceTree = "<group>"; };
-		1C3256ED231CFFB1004B137B /* ClubProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubProfileTableViewController.swift; sourceTree = "<group>"; };
 		1C3256EE231CFFB2004B137B /* AddJobVacancyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddJobVacancyTableViewController.swift; sourceTree = "<group>"; };
 		1C4CA9CE23169BD7007B8FB8 /* JobVacanciesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobVacanciesViewController.swift; sourceTree = "<group>"; };
 		1C4CA9D023169BF9007B8FB8 /* CustomCellJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellJob.swift; sourceTree = "<group>"; };
@@ -91,7 +92,20 @@
 		8656C4B2231E5D2D00918B3D /* HttpClientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientManager.swift; sourceTree = "<group>"; };
 		8656C4B4231E5DD200918B3D /* OpenDota.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenDota.swift; sourceTree = "<group>"; };
 		8656C4B6231E5E5D00918B3D /* PlayerStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatistic.swift; sourceTree = "<group>"; };
-		86CE79F72317B302003552B4 /* PlayerRegistrationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerRegistrationController.swift; sourceTree = "<group>"; };
+		86867267231E9380007D332B /* VacancyDetailJobDescTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VacancyDetailJobDescTableViewCell.swift; sourceTree = "<group>"; };
+		86867268231E9380007D332B /* PlayerEditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerEditTableViewController.swift; sourceTree = "<group>"; };
+		86867269231E9380007D332B /* PlayerProfileAboutMeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerProfileAboutMeTableViewCell.swift; sourceTree = "<group>"; };
+		8686726A231E9380007D332B /* ClubProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubProfileTableViewController.swift; sourceTree = "<group>"; };
+		8686726B231E9380007D332B /* BrowseJobVacancyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseJobVacancyTableViewCell.swift; sourceTree = "<group>"; };
+		8686726C231E9381007D332B /* PlayerProfileStatisticsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerProfileStatisticsTableViewCell.swift; sourceTree = "<group>"; };
+		8686726D231E9381007D332B /* ClubEditProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubEditProfileTableViewController.swift; sourceTree = "<group>"; };
+		8686726E231E9381007D332B /* VacancyJobCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VacancyJobCollectionViewCell.swift; sourceTree = "<group>"; };
+		86867277231E938B007D332B /* VacancyDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VacancyDetailController.swift; sourceTree = "<group>"; };
+		86867278231E938B007D332B /* BrowseVacancyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseVacancyController.swift; sourceTree = "<group>"; };
+		86867279231E938B007D332B /* PlayerProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerProfileController.swift; sourceTree = "<group>"; };
+		8686727A231E938B007D332B /* PlayerRegistrationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerRegistrationController.swift; sourceTree = "<group>"; };
+		8686727B231E938B007D332B /* ClubTeamProfilev2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ClubTeamProfilev2.storyboard; sourceTree = "<group>"; };
+		8686727C231E938B007D332B /* ChangePasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordController.swift; sourceTree = "<group>"; };
 		86CE79F92317B3BE003552B4 /* ESportMC3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ESportMC3.entitlements; sourceTree = "<group>"; };
 		86CE79FB2317B3D9003552B4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		E64F03C92316563D00AF1F9D /* DetailCityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCityController.swift; sourceTree = "<group>"; };
@@ -124,7 +138,6 @@
 		E6AC21FF230BDB100004ACA7 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		E6AC2202230C08670004ACA7 /* PlayerDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailController.swift; sourceTree = "<group>"; };
 		E6D0F2B5231D027300D63500 /* ChangePasswordClubTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordClubTableViewController.swift; sourceTree = "<group>"; };
-		E6D0F2B7231D027E00D63500 /* ClubTeamProfilev2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ClubTeamProfilev2.storyboard; sourceTree = "<group>"; };
 		E6D0F2BB231D757800D63500 /* TeamProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamProfileController.swift; sourceTree = "<group>"; };
 		E6D0F2BD231D7F1500D63500 /* TeamProfileViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamProfileViewCell.swift; sourceTree = "<group>"; };
 		E6D0F2BF231D891E00D63500 /* JobDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -190,16 +203,20 @@
 		E6AC2201230C081E0004ACA7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				86867278231E938B007D332B /* BrowseVacancyController.swift */,
+				8686727C231E938B007D332B /* ChangePasswordController.swift */,
+				8686727B231E938B007D332B /* ClubTeamProfilev2.storyboard */,
+				86867279231E938B007D332B /* PlayerProfileController.swift */,
+				8686727A231E938B007D332B /* PlayerRegistrationController.swift */,
+				86867277231E938B007D332B /* VacancyDetailController.swift */,
 				864B9BF7231D3C2600DD257E /* ClubTeamProfile.storyboard */,
 				E6F3630F230D36FB008078BC /* HomeController.swift */,
 				E6AC2202230C08670004ACA7 /* PlayerDetailController.swift */,
 				E64F03CF23166DF700AF1F9D /* TeamDetailController.swift */,
-				E64F03E52317ED6100AF1F9D /* VacancyDetailController.swift */,
 				E6AC21E6230BD1460004ACA7 /* LoginController.swift */,
 				E64F03D923169FD000AF1F9D /* PlayerRegistrationController.swift */,
 				E64F03D1231674C900AF1F9D /* TeamRegistrationController.swift */,
 				E64F03C92316563D00AF1F9D /* DetailCityController.swift */,
-				E64F03DF2317AC2400AF1F9D /* BrowseVacancyController.swift */,
 				E6D0F2BB231D757800D63500 /* TeamProfileController.swift */,
 			);
 			path = View;
@@ -224,15 +241,21 @@
 		E6F3630A230C5C0F008078BC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8686726B231E9380007D332B /* BrowseJobVacancyTableViewCell.swift */,
+				8686726D231E9381007D332B /* ClubEditProfileTableViewController.swift */,
+				8686726A231E9380007D332B /* ClubProfileTableViewController.swift */,
+				86867268231E9380007D332B /* PlayerEditTableViewController.swift */,
+				86867269231E9380007D332B /* PlayerProfileAboutMeTableViewCell.swift */,
+				8686726C231E9381007D332B /* PlayerProfileStatisticsTableViewCell.swift */,
+				86867267231E9380007D332B /* VacancyDetailJobDescTableViewCell.swift */,
+				8686726E231E9381007D332B /* VacancyJobCollectionViewCell.swift */,
 				1C3256EE231CFFB2004B137B /* AddJobVacancyTableViewController.swift */,
 				E6D0F2B5231D027300D63500 /* ChangePasswordClubTableViewController.swift */,
 				1C3256EA231CFFB1004B137B /* PlayerProfileTableViewController.swift */,
-				E68159E8231CFF510039DDFF /* PlayerEditTableViewController.swift */,
 				E68E9111230EFFD8006D1375 /* PlayerDetailProfileTableViewCell.swift */,
 				E68E911923144353006D1375 /* PlayerDetailStatisticsTableViewCell.swift */,
 				E64F03D3231697B900AF1F9D /* TeamDetailProfileTableViewCell.swift */,
 				E64F03D723169D1A00AF1F9D /* TeamDetailJobTableViewCell.swift */,
-				E64F03E32317DE2200AF1F9D /* VacancyDetailJobDescTableViewCell.swift */,
 				E6F36313230D39B5008078BC /* PlayerInsideCollectionViewCell.swift */,
 				E6A1A431230D9C6C006B0727 /* TeamInsideCollectionViewCell.swift */,
 				E6A1A437230D9F18006B0727 /* JobInsideCollectionViewCell.swift */,
@@ -246,7 +269,6 @@
 				1C4CA9D023169BF9007B8FB8 /* CustomCellJob.swift */,
 				1C4CA9D223169C16007B8FB8 /* JobVacanciesDetailViewController.swift */,
 				1C4CA9D623169C67007B8FB8 /* UIView+Layout.swift */,
-				E64F03E12317B0E100AF1F9D /* BrowseJobVacancyTableViewCell.swift */,
 				E6D0F2BD231D7F1500D63500 /* TeamProfileViewCell.swift */,
 				E6D0F2BF231D891E00D63500 /* JobDetailTableViewCell.swift */,
 			);
@@ -322,8 +344,8 @@
 				E6AC21F2230BD1470004ACA7 /* LaunchScreen.storyboard in Resources */,
 				E6AC21EF230BD1470004ACA7 /* Assets.xcassets in Resources */,
 				E6AC21EA230BD1460004ACA7 /* Main.storyboard in Resources */,
-				E6D0F2B8231D027E00D63500 /* ClubTeamProfilev2.storyboard in Resources */,
-				E68159D7231CFDA90039DDFF /* ClubTeamProfile.storyboard in Resources */,
+				86867281231E938B007D332B /* ClubTeamProfilev2.storyboard in Resources */,
+				E68159D7231CFDA90039DDFF /* (null) in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,60 +357,70 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6A1A43A230E61A3006B0727 /* Model.swift in Sources */,
-				E64F03DA23169FD000AF1F9D /* PlayerRegistrationController.swift in Sources */,
 				E6AC21ED230BD1460004ACA7 /* ESportMC3.xcdatamodeld in Sources */,
 				E6D0F2C0231D891E00D63500 /* JobDetailTableViewCell.swift in Sources */,
 				E68E911A23144353006D1375 /* PlayerDetailStatisticsTableViewCell.swift in Sources */,
 				E64F03D023166DF700AF1F9D /* TeamDetailController.swift in Sources */,
-				E68159E5231CFDC50039DDFF /* PlayerProfileStatisticsTableViewCell.swift in Sources */,
+				E68159E5231CFDC50039DDFF /* (null) in Sources */,
 				E6D0F2B6231D027300D63500 /* ChangePasswordClubTableViewController.swift in Sources */,
 				E6AC21E7230BD1460004ACA7 /* LoginController.swift in Sources */,
+				86867271231E9381007D332B /* PlayerProfileAboutMeTableViewCell.swift in Sources */,
 				8656C4B7231E5E5D00918B3D /* PlayerStatistic.swift in Sources */,
-				E68159E3231CFDC50039DDFF /* ClubEditProfileTableViewController.swift in Sources */,
-				E68159E9231CFF510039DDFF /* PlayerEditTableViewController.swift in Sources */,
+				E68159E3231CFDC50039DDFF /* (null) in Sources */,
+				E68159E9231CFF510039DDFF /* (null) in Sources */,
 				1C4CA9D123169BF9007B8FB8 /* CustomCellJob.swift in Sources */,
 				1C4CA9CF23169BD7007B8FB8 /* JobVacanciesViewController.swift in Sources */,
 				E64F03CE23165D1A00AF1F9D /* City.swift in Sources */,
 				8656C4B3231E5D2D00918B3D /* HttpClientManager.swift in Sources */,
 				1C4CA9D323169C16007B8FB8 /* JobVacanciesDetailViewController.swift in Sources */,
 				1C3256F4231CFFB2004B137B /* AddJobVacancyTableViewController.swift in Sources */,
-				1C3256F2231CFFB2004B137B /* VacancyJobCollectionViewCell.swift in Sources */,
+				8686727D231E938B007D332B /* VacancyDetailController.swift in Sources */,
+				86867275231E9381007D332B /* ClubEditProfileTableViewController.swift in Sources */,
+				8686726F231E9381007D332B /* VacancyDetailJobDescTableViewCell.swift in Sources */,
 				E68E91162311A1E0006D1375 /* SearchPlayerHomeTableViewCell.swift in Sources */,
-				E68159E7231CFDC50039DDFF /* AddJobVacancyTableViewController.swift in Sources */,
+				E68159E7231CFDC50039DDFF /* (null) in Sources */,
 				E6F36314230D39B5008078BC /* PlayerInsideCollectionViewCell.swift in Sources */,
 				E68E911C23152476006D1375 /* GradientImageView.swift in Sources */,
+				8686727E231E938B007D332B /* BrowseVacancyController.swift in Sources */,
 				8656C4B5231E5DD200918B3D /* OpenDota.swift in Sources */,
-				E68159E2231CFDC50039DDFF /* ClubProfileTableViewController.swift in Sources */,
+				E68159E2231CFDC50039DDFF /* (null) in Sources */,
 				1C4CA9D723169C67007B8FB8 /* UIView+Layout.swift in Sources */,
 				E6A1A434230D9CB3006B0727 /* HomeTeamTableViewCell.swift in Sources */,
 				E6A1A436230D9EFD006B0727 /* HomeJobTableViewCell.swift in Sources */,
-				E64F03E62317ED6100AF1F9D /* VacancyDetailController.swift in Sources */,
+				E64F03E62317ED6100AF1F9D /* (null) in Sources */,
 				E6A1A438230D9F18006B0727 /* JobInsideCollectionViewCell.swift in Sources */,
 				E68E91182311A801006D1375 /* SearchTeamTableViewCell.swift in Sources */,
-				E68159E1231CFDC50039DDFF /* VacancyJobCollectionViewCell.swift in Sources */,
+				E68159E1231CFDC50039DDFF /* (null) in Sources */,
 				E6F36310230D36FB008078BC /* HomeController.swift in Sources */,
-				E64F03E42317DE2200AF1F9D /* VacancyDetailJobDescTableViewCell.swift in Sources */,
+				E64F03E42317DE2200AF1F9D /* (null) in Sources */,
+				86867273231E9381007D332B /* BrowseJobVacancyTableViewCell.swift in Sources */,
 				E6AC2200230BDB100004ACA7 /* Player.swift in Sources */,
-				E68159E6231CFDC50039DDFF /* PlayerProfileTableViewController.swift in Sources */,
+				E68159E6231CFDC50039DDFF /* (null) in Sources */,
+				86867282231E938B007D332B /* ChangePasswordController.swift in Sources */,
 				E6AC21E5230BD1460004ACA7 /* AppDelegate.swift in Sources */,
 				E64F03D823169D1A00AF1F9D /* TeamDetailJobTableViewCell.swift in Sources */,
-				E64F03E02317AC2400AF1F9D /* BrowseVacancyController.swift in Sources */,
-				E64F03E22317B0E100AF1F9D /* BrowseJobVacancyTableViewCell.swift in Sources */,
-				E68159D9231CFDA90039DDFF /* ChangePasswordController.swift in Sources */,
+				86867274231E9381007D332B /* PlayerProfileStatisticsTableViewCell.swift in Sources */,
+				E64F03E02317AC2400AF1F9D /* (null) in Sources */,
+				E64F03E22317B0E100AF1F9D /* (null) in Sources */,
+				86867280231E938B007D332B /* PlayerRegistrationController.swift in Sources */,
+				E68159D9231CFDA90039DDFF /* (null) in Sources */,
 				E64F03D4231697B900AF1F9D /* TeamDetailProfileTableViewCell.swift in Sources */,
+				8686727F231E938B007D332B /* PlayerProfileController.swift in Sources */,
 				E64F03CA2316563D00AF1F9D /* DetailCityController.swift in Sources */,
 				E68E910E230EA5BB006D1375 /* Team.swift in Sources */,
-				1C3256EF231CFFB2004B137B /* ClubEditProfileTableViewController.swift in Sources */,
 				E6A1A432230D9C6C006B0727 /* TeamInsideCollectionViewCell.swift in Sources */,
 				E68E9110230EAEFE006D1375 /* Job.swift in Sources */,
 				E68E9112230EFFD8006D1375 /* PlayerDetailProfileTableViewCell.swift in Sources */,
 				E64F03D2231674C900AF1F9D /* TeamRegistrationController.swift in Sources */,
 				E6AC2203230C08670004ACA7 /* PlayerDetailController.swift in Sources */,
-				E68159E4231CFDC50039DDFF /* PlayerProfileAboutMeTableViewCell.swift in Sources */,
+				86867276231E9381007D332B /* VacancyJobCollectionViewCell.swift in Sources */,
+				E68159E4231CFDC50039DDFF /* (null) in Sources */,
 				E6D0F2BE231D7F1500D63500 /* TeamProfileViewCell.swift in Sources */,
+				86867270231E9381007D332B /* PlayerEditTableViewController.swift in Sources */,
 				1C4CA9D523169C36007B8FB8 /* DataManager.swift in Sources */,
+				86867272231E9381007D332B /* ClubProfileTableViewController.swift in Sources */,
 				E6F36312230D3976008078BC /* HomePlayerTableViewCell.swift in Sources */,
-				E68159D8231CFDA90039DDFF /* PlayerProfileController.swift in Sources */,
+				E68159D8231CFDA90039DDFF /* (null) in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,7 +568,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ESportMC3/ESportMC3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2NJYBE4CVL;
+				DEVELOPMENT_TEAM = CLWMV75S4M;
 				INFOPLIST_FILE = ESportMC3/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -556,7 +588,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ESportMC3/ESportMC3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2NJYBE4CVL;
+				DEVELOPMENT_TEAM = CLWMV75S4M;
 				INFOPLIST_FILE = ESportMC3/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
