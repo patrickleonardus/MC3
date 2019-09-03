@@ -29,6 +29,7 @@ class TeamRegistrationController: UITableViewController {
     @IBOutlet weak var inputEmail: UITextField!
     @IBOutlet weak var inputPassword: UITextField!
     @IBOutlet weak var inputRetypePassword: UITextField!
+    
     var cityTemp2 = ""
     
     override func viewDidLoad() {

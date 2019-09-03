@@ -19,6 +19,9 @@
 		1C4CA9D523169C36007B8FB8 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4CA9D423169C36007B8FB8 /* DataManager.swift */; };
 		1C4CA9D723169C67007B8FB8 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4CA9D623169C67007B8FB8 /* UIView+Layout.swift */; };
 		864B9BF8231D3C2600DD257E /* ClubTeamProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 864B9BF7231D3C2600DD257E /* ClubTeamProfile.storyboard */; };
+		8656C4B3231E5D2D00918B3D /* HttpClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8656C4B2231E5D2D00918B3D /* HttpClientManager.swift */; };
+		8656C4B5231E5DD200918B3D /* OpenDota.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8656C4B4231E5DD200918B3D /* OpenDota.swift */; };
+		8656C4B7231E5E5D00918B3D /* PlayerStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8656C4B6231E5E5D00918B3D /* PlayerStatistic.swift */; };
 		86CE79FC2317B3D9003552B4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86CE79FB2317B3D9003552B4 /* CloudKit.framework */; };
 		E64F03CA2316563D00AF1F9D /* DetailCityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F03C92316563D00AF1F9D /* DetailCityController.swift */; };
 		E64F03CE23165D1A00AF1F9D /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F03CD23165D1A00AF1F9D /* City.swift */; };
@@ -85,6 +88,9 @@
 		1C4CA9D423169C36007B8FB8 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		1C4CA9D623169C67007B8FB8 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		864B9BF7231D3C2600DD257E /* ClubTeamProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ClubTeamProfile.storyboard; sourceTree = "<group>"; };
+		8656C4B2231E5D2D00918B3D /* HttpClientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientManager.swift; sourceTree = "<group>"; };
+		8656C4B4231E5DD200918B3D /* OpenDota.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenDota.swift; sourceTree = "<group>"; };
+		8656C4B6231E5E5D00918B3D /* PlayerStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatistic.swift; sourceTree = "<group>"; };
 		86CE79F72317B302003552B4 /* PlayerRegistrationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerRegistrationController.swift; sourceTree = "<group>"; };
 		86CE79F92317B3BE003552B4 /* ESportMC3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ESportMC3.entitlements; sourceTree = "<group>"; };
 		86CE79FB2317B3D9003552B4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -208,6 +214,9 @@
 				E68E910F230EAEFE006D1375 /* Job.swift */,
 				E64F03CD23165D1A00AF1F9D /* City.swift */,
 				1C4CA9D423169C36007B8FB8 /* DataManager.swift */,
+				8656C4B2231E5D2D00918B3D /* HttpClientManager.swift */,
+				8656C4B4231E5DD200918B3D /* OpenDota.swift */,
+				8656C4B6231E5E5D00918B3D /* PlayerStatistic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -334,11 +343,13 @@
 				E68159E5231CFDC50039DDFF /* PlayerProfileStatisticsTableViewCell.swift in Sources */,
 				E6D0F2B6231D027300D63500 /* ChangePasswordClubTableViewController.swift in Sources */,
 				E6AC21E7230BD1460004ACA7 /* LoginController.swift in Sources */,
+				8656C4B7231E5E5D00918B3D /* PlayerStatistic.swift in Sources */,
 				E68159E3231CFDC50039DDFF /* ClubEditProfileTableViewController.swift in Sources */,
 				E68159E9231CFF510039DDFF /* PlayerEditTableViewController.swift in Sources */,
 				1C4CA9D123169BF9007B8FB8 /* CustomCellJob.swift in Sources */,
 				1C4CA9CF23169BD7007B8FB8 /* JobVacanciesViewController.swift in Sources */,
 				E64F03CE23165D1A00AF1F9D /* City.swift in Sources */,
+				8656C4B3231E5D2D00918B3D /* HttpClientManager.swift in Sources */,
 				1C4CA9D323169C16007B8FB8 /* JobVacanciesDetailViewController.swift in Sources */,
 				1C3256F4231CFFB2004B137B /* AddJobVacancyTableViewController.swift in Sources */,
 				1C3256F2231CFFB2004B137B /* VacancyJobCollectionViewCell.swift in Sources */,
@@ -346,6 +357,7 @@
 				E68159E7231CFDC50039DDFF /* AddJobVacancyTableViewController.swift in Sources */,
 				E6F36314230D39B5008078BC /* PlayerInsideCollectionViewCell.swift in Sources */,
 				E68E911C23152476006D1375 /* GradientImageView.swift in Sources */,
+				8656C4B5231E5DD200918B3D /* OpenDota.swift in Sources */,
 				E68159E2231CFDC50039DDFF /* ClubProfileTableViewController.swift in Sources */,
 				1C4CA9D723169C67007B8FB8 /* UIView+Layout.swift in Sources */,
 				E6A1A434230D9CB3006B0727 /* HomeTeamTableViewCell.swift in Sources */,

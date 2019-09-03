@@ -280,7 +280,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="600" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bkj-W7-Xcj">
-                                                            <rect key="frame" x="155" y="34" width="65" height="65"/>
+                                                            <rect key="frame" x="155" y="34" width="81" height="65"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -514,12 +514,25 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="assistView" destination="pp2-KB-oAL" id="aoE-cM-csA"/>
-                                            <outlet property="deathsView" destination="2df-Pj-6dV" id="U4V-Ho-SyC"/>
-                                            <outlet property="goldView" destination="y4b-Ry-9se" id="y7W-ud-7fW"/>
-                                            <outlet property="killsView" destination="DVT-f7-9dg" id="NqA-wm-L5T"/>
-                                            <outlet property="winrateView" destination="kWW-6I-S6s" id="wrN-L9-bYx"/>
-                                            <outlet property="xpView" destination="0Vb-b8-dOM" id="OyM-ci-wne"/>
+                                            <outlet property="assistView" destination="pp2-KB-oAL" id="Mep-Yt-A2L"/>
+                                            <outlet property="deathsView" destination="2df-Pj-6dV" id="7fi-iL-x75"/>
+                                            <outlet property="goldView" destination="y4b-Ry-9se" id="RLB-Ic-hCG"/>
+                                            <outlet property="killsView" destination="nGz-Ao-T8j" id="2yx-aF-q9D"/>
+                                            <outlet property="lblAssist" destination="ebk-D3-gL3" id="q5q-TR-I8E"/>
+                                            <outlet property="lblAssistMax" destination="onC-Z3-yim" id="U2J-eM-kjL"/>
+                                            <outlet property="lblDeath" destination="rGY-EH-9hy" id="ObZ-4E-6bq"/>
+                                            <outlet property="lblDeathMax" destination="d8y-ot-m9u" id="dcW-Mg-zZM"/>
+                                            <outlet property="lblGoldPerMin" destination="J23-fI-9xS" id="qU8-ib-cMm"/>
+                                            <outlet property="lblGoldPerMinMax" destination="l8i-wi-Ens" id="GKY-cU-hOG"/>
+                                            <outlet property="lblKill" destination="YO7-BT-lVN" id="tDw-iP-OA9"/>
+                                            <outlet property="lblKillMax" destination="nGz-Ao-T8j" id="Pey-LJ-kMS"/>
+                                            <outlet property="lblLose" destination="Dwz-CR-oCT" id="siy-pX-cmQ"/>
+                                            <outlet property="lblWin" destination="Bkj-W7-Xcj" id="whB-VY-F1Z"/>
+                                            <outlet property="lblWinRate" destination="Kur-Yb-0vJ" id="Wc1-2g-ecT"/>
+                                            <outlet property="lblXpPerMin" destination="ofR-GM-t3f" id="osN-uD-Bc9"/>
+                                            <outlet property="lblXpPerMinMax" destination="ssD-Fq-06G" id="iSP-wT-T5f"/>
+                                            <outlet property="winrateView" destination="kWW-6I-S6s" id="Y5X-rD-cid"/>
+                                            <outlet property="xpView" destination="0Vb-b8-dOM" id="493-kG-w3W"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1787,7 +1800,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="E6P-KO-yQY">
-                                        <rect key="frame" x="0.0" y="375" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="463" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E6P-KO-yQY" id="kmL-q3-GF0">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -1811,7 +1824,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Pvs-Zl-2N2">
-                                        <rect key="frame" x="0.0" y="419" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="507" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pvs-Zl-2N2" id="uFs-e1-AJc">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -1839,7 +1852,7 @@
                             <tableViewSection headerTitle=" " footerTitle=" " id="Opv-OZ-121">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="R9V-Rd-NsE">
-                                        <rect key="frame" x="0.0" y="491" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="579" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R9V-Rd-NsE" id="UL5-3e-kaG">
                                             <rect key="frame" x="0.0" y="0.0" width="376" height="43.5"/>
@@ -1878,7 +1891,13 @@
                         <outlet property="imageProfile" destination="gqh-7X-5OX" id="JUk-gx-h2V"/>
                         <outlet property="inputCity" destination="FJG-7X-DRe" id="p15-ad-JFs"/>
                         <outlet property="inputDOB" destination="d8P-Yl-lA6" id="ObB-3w-BX9"/>
+                        <outlet property="inputEmail" destination="c7g-LC-aiE" id="fwF-PP-5bP"/>
                         <outlet property="inputGender" destination="nim-DW-4gT" id="HEI-IV-Spf"/>
+                        <outlet property="inputName" destination="tqa-8m-dwZ" id="IsY-NG-Uhs"/>
+                        <outlet property="inputPassword" destination="anu-fh-WRu" id="Qvt-cV-Wnh"/>
+                        <outlet property="inputRetypePassword" destination="VFA-pC-aWn" id="O0g-l1-ok6"/>
+                        <outlet property="inputTelp" destination="onx-Bi-OcZ" id="EXo-2V-twp"/>
+                        <outlet property="inputUsername" destination="mJa-PT-kbg" id="nbn-PQ-Mic"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J89-Qs-075" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2226,6 +2245,11 @@
                     <connections>
                         <outlet property="imageProfile" destination="zyf-Zn-4q6" id="Oxh-E2-reu"/>
                         <outlet property="inputCity" destination="TkV-mb-uiw" id="tpp-V1-kBH"/>
+                        <outlet property="inputEmail" destination="Zur-HS-8Rs" id="fmV-jy-jnl"/>
+                        <outlet property="inputName" destination="8Dm-ry-Dmj" id="zYm-oI-Gzn"/>
+                        <outlet property="inputPassword" destination="h2Q-xl-68e" id="M21-dI-nhr"/>
+                        <outlet property="inputRetypePassword" destination="zet-uQ-3xy" id="Aah-FH-0oC"/>
+                        <outlet property="inputYear" destination="Y7P-Lj-NlG" id="gyg-Ya-kXH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4gH-fk-jDq" userLabel="First Responder" sceneMemberID="firstResponder"/>

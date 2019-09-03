@@ -122,8 +122,9 @@ class HomeController: UIViewController {
                     let alias = record.value(forKey: "alias") as! String
                     let city = record.value(forKey: "city") as! String
                     let description = record.value(forKey: "description") as! String
+                    let image = record.value(forKey: "image") as! String
                     
-                    let team = Team(image: "Team1", name: name, location: city, description: description, alias: alias)
+                    let team = Team(image: image, name: name, location: city, description: description, alias: alias)
                     
                     print("club : \(name)")
                     
@@ -172,8 +173,9 @@ class HomeController: UIViewController {
                     let city = record.value(forKey: "city") as! String
                     let gender = record.value(forKey: "gender") as! String
                     let description = record.value(forKey: "description") as! String
+                    let image = record.value(forKey: "image") as! String
                     
-                    let player = Player(image: "people1", name: name, username: alias, location: city, age: "23", gender: gender, jobAvailability: "Available", description: description, rank: "Immortal")
+                    let player = Player(image: image, name: name, username: alias, location: city, age: "23", gender: gender, jobAvailability: "Available", description: description, rank: "Immortal")
                     
                     self.players.append(player)
                 }
@@ -752,6 +754,7 @@ extension HomeController: PlayerListener {
         let locationTemp = player.location
         let descriptionTemp = player.description
         let rankTemp = player.rank
+        let userName = player.username
         
         UserDefaults.standard.set(imageTemp, forKey: "imageForDetail")
         UserDefaults.standard.set(nameTemp, forKey: "nameForDetail")
@@ -761,6 +764,7 @@ extension HomeController: PlayerListener {
         UserDefaults.standard.set(locationTemp, forKey: "locationForDetail")
         UserDefaults.standard.set(descriptionTemp, forKey: "descriptionForDetail")
         UserDefaults.standard.set(rankTemp, forKey: "rankForDetail")
+        UserDefaults.standard.set(userName, forKey: "userNameForDetail")
         
         let viewController = storyboard?.instantiateViewController(withIdentifier: "playerDetail")
         self.navigationController?.pushViewController(viewController!, animated: true)

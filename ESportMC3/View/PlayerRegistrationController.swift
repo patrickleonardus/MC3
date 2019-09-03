@@ -14,16 +14,21 @@ class PlayerRegistrationController: UITableViewController {
     
     var genders = ["Male","Female"]
     
-    @IBOutlet weak var inputUserName: UITextField!
     @IBOutlet weak var inputName: UITextField!
     @IBOutlet weak var inputDOB: UITextField!
     @IBOutlet weak var inputGender: UITextField!
     @IBOutlet weak var imageProfile: UIImageView!
     @IBOutlet weak var inputCity: UILabel!
     @IBOutlet weak var inputEmail: UITextField!
-    @IBOutlet weak var inputRetypePassword: UITextField!
     @IBOutlet weak var inputPassword: UITextField!
-    @IBOutlet weak var inputPhone: UITextField!
+    @IBOutlet weak var inputRetypePassword: UITextField!
+    @IBOutlet weak var inputUsername: UITextField!
+    @IBOutlet weak var inputTelp: UITextField!
+    
+    //    @IBOutlet weak var inputEmail: UITextField!
+//    @IBOutlet weak var inputRetypePassword: UITextField!
+//    @IBOutlet weak var inputPassword: UITextField!
+//    @IBOutlet weak var inputPhone: UITextField!
     
     @IBOutlet weak var inputFullname: UITextField!
     @IBOutlet weak var inputEmail: UITextField!
@@ -68,20 +73,30 @@ class PlayerRegistrationController: UITableViewController {
     }
     
     @objc func submitAction() {
-        if inputPassword.text != inputRetypePassword.text {
+        if inputPassword.text == nil {
+            print("Password nil")
+            return
+        }
+        
+        if inputRetypePassword.text == nil {
+            print("Retype Password nil")
+            return
+        }
+        
+        if inputPassword.text! != inputRetypePassword.text! {
             print("Password not match")
             return
         }
         
         let newPlayer = CKRecord(recordType: "Players")
         newPlayer.setValue(inputName.text, forKey: "name")
-        newPlayer.setValue(inputUserName.text, forKey: "userName")
+        newPlayer.setValue(inputUsername.text, forKey: "alias")
         newPlayer.setValue(inputCity.text, forKey: "city")
         newPlayer.setValue(inputEmail.text, forKey: "email")
         newPlayer.setValue(inputGender.text, forKey: "gender")
         newPlayer.setValue("Available", forKey: "isAvailable")
         newPlayer.setValue(inputPassword.text, forKey: "password")
-        newPlayer.setValue(inputPhone.text, forKey: "phone")
+        newPlayer.setValue(inputTelp.text, forKey: "phone")
         
         CKContainer.default().publicCloudDatabase.save(newPlayer) { (record, error) in
             guard record != nil else { return }
