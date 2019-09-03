@@ -14,6 +14,13 @@ class TeamRegistrationController: UITableViewController {
     @IBOutlet weak var inputAboutTeam: UITextView!
     @IBOutlet weak var imageProfile: UIImageView!
     @IBOutlet weak var inputCity: UILabel!
+    @IBOutlet weak var inputEmail: UITextField!
+    @IBOutlet weak var inputPassword: UITextField!
+    @IBOutlet weak var inputName: UITextField!
+    @IBOutlet weak var inputAlias: UITextField!
+    @IBOutlet weak var inputYear: UITextField!
+    @IBOutlet weak var inputPhone: UITextField!
+    
     
     var cityTemp2 = ""
     
@@ -49,11 +56,22 @@ class TeamRegistrationController: UITableViewController {
     @objc func submitAction(){
         view.endEditing(true)
         
+        let picture = imageProfile.image
+        let imageData:NSData = picture!.pngData()! as NSData
+        
+        UserDefaults.standard.set(imageData, forKey: "imageTeam")
+        UserDefaults.standard.set(inputAboutTeam.text, forKey: "descTeam")
+        UserDefaults.standard.set(inputCity.text, forKey: "cityTeam")
+        UserDefaults.standard.set(inputName.text, forKey: "nameTeam")
+        UserDefaults.standard.set(inputAlias.text, forKey: "aliasTeam")
+        UserDefaults.standard.set(inputYear.text, forKey: "yearTeam")
+        UserDefaults.standard.set(inputEmail.text, forKey: "emailTeam")
+        UserDefaults.standard.set(inputPassword.text, forKey: "passwordTeam")
+        UserDefaults.standard.set(inputPhone.text, forKey: "phoneTeam")
         UserDefaults.standard.set(true, forKey: "userCheck")
         UserDefaults.standard.set("Team", forKey: "userRole")
         
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "Login")
-        self.navigationController?.pushViewController(viewController!, animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @objc func cancelAction(){

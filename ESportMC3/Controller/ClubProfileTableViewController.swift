@@ -35,13 +35,17 @@ class ClubProfileTableViewController: UITableViewController,UICollectionViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        clubNameLabel.text = clubName
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        setButton()
+    }
+    
+    func setButton(){
+        let btnSubmit = UIBarButtonItem(title: "Submit", style: .done, target: self, action: #selector(submitAction))
+        
+        navigationItem.rightBarButtonItem = btnSubmit
+    }
+    
+    @objc func submitAction(){
+        performSegue(withIdentifier: "goToEditProfileClub", sender: self)
     }
     
     func userCheck(){
