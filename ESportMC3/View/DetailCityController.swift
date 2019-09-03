@@ -95,6 +95,9 @@ class DetailCityController: UITableViewController {
         cityTemp = city[indexPath.row]
         performSegue(withIdentifier: "unwindToDetail", sender: self)
         performSegue(withIdentifier: "unwindFromCity", sender: self)
+        performSegue(withIdentifier: "unwindFromCityToPlayer", sender: self)
+        performSegue(withIdentifier: "UnwindFromCityToEditClubProfile", sender: self)
+        performSegue(withIdentifier: "unwindFromCityToAddJob", sender: self)
         
     }
     
@@ -106,6 +109,18 @@ class DetailCityController: UITableViewController {
         else if segue.identifier == "unwindFromCity" {
             let destination = segue.destination as! TeamRegistrationController
             destination.cityTemp2 = cityTemp
+        }
+        else if segue.identifier == "unwindFromCityToPlayer" {
+            let destination = segue.destination as! PlayerEditTableViewController
+            destination.cityTemp3 = cityTemp
+        }
+        else if segue.identifier == "UnwindFromCityToEditClubProfile" {
+            let destination = segue.destination as! ClubEditProfileTableViewController
+            destination.cityTemp3 = cityTemp
+        }
+        else if segue.identifier == "unwindFromCityToAddJob" {
+            let destination = segue.destination as! AddJobVacancyTableViewController
+            destination.cityTemp4 = cityTemp
         }
     }
 

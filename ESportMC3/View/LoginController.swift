@@ -67,6 +67,24 @@ class LoginController: UIViewController {
         self.present(alert, animated: true)
     }
     
+    @IBAction func btnLogin(_ sender: Any) {
+        
+        if UserDefaults.standard.string(forKey: "userRole") == "Player" {
+            if txtName.text == UserDefaults.standard.string(forKey: "emailPlayer") && txtPassword.text == UserDefaults.standard.string(forKey: "passwordPlayer") {
+                UserDefaults.standard.set(true, forKey: "userCheck")
+                performSegue(withIdentifier: "goHome", sender: self)
+            }
+        }
+        
+        else if UserDefaults.standard.string(forKey: "userRole") == "Team" {
+            if txtName.text == UserDefaults.standard.string(forKey: "emailTeam") && txtPassword.text == UserDefaults.standard.string(forKey: "passwordTeam") {
+                UserDefaults.standard.set(true, forKey: "userCheck")
+                performSegue(withIdentifier: "goHome", sender: self)
+            }
+        }
+        
+    }
+    
 
 }
 

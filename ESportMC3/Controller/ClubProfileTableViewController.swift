@@ -24,19 +24,39 @@ class ClubProfileTableViewController: UITableViewController,UICollectionViewData
     
 
     var clubName:String = "Dany"
-    
+    //outlet outlet
     @IBOutlet weak var jobVacancyCollectionView: UICollectionView!
     @IBOutlet weak var clubNameLabel: UILabel!
+    @IBOutlet weak var clubAliasLabel: UILabel!
+    @IBOutlet weak var clubLocationLabel: UILabel!
+    @IBOutlet weak var clubDescriptionLabel: UILabel!
+    @IBOutlet weak var clubFoundedLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        clubNameLabel.text = clubName
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        setButton()
+    }
+    
+    func setButton(){
+        let btnSubmit = UIBarButtonItem(title: "Submit", style: .done, target: self, action: #selector(submitAction))
+        
+        navigationItem.rightBarButtonItem = btnSubmit
+    }
+    
+    @objc func submitAction(){
+        performSegue(withIdentifier: "goToEditProfileClub", sender: self)
+    }
+    
+    func userCheck(){
+        var userCheck = UserDefaults.standard.bool(forKey: "userCheck")
+        
+        if userCheck == false {
+            
+        }
+        else if userCheck {
+            
+        }
     }
 
     // MARK: - Table view data source
