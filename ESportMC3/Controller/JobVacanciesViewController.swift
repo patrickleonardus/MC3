@@ -17,42 +17,65 @@ class JobVacanciesViewController: UIViewController, UITableViewDataSource, UITab
     lazy var rowsToDisplay = DataManager.shared.clubNameList
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rowsToDisplay.count
+        
+        var numberOfRow = 0
+        
+        if UserDefaults.standard.string(forKey: "userRole") == "Player" {
+            if segmentedControl.selectedSegmentIndex == 0 {
+                numberOfRow = DataManager.shared.clubNameList.count
+            }
+            else {
+                numberOfRow = DataManagerOffer.shared.clubNameList.count
+            }
+        }
+        
+        if UserDefaults.standard.string(forKey: "userRole") == "Team" {
+            if segmentedControl.selectedSegmentIndex == 0 {
+                 numberOfRow = DataManagerOffer.shared.playerNameList.count
+            }
+            else {
+                 numberOfRow = DataManager.shared.playerNameList.count
+            }
+        }
+        
+        return numberOfRow
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "custom") as! CustomCellJob
         
         if UserDefaults.standard.string(forKey: "userRole") == "Player"{
-            rowsToDisplay = DataManager.shared.clubNameList
-        }
             
+            if segmentedControl.selectedSegmentIndex == 0 {
+                cell.subject = DataManager.shared.clubNameList[indexPath.row]
+                cell.descrip = "You applied for the Dota2 team as a \(DataManager.shared.roleList[indexPath.row])"
+                cell.date = DataManager.shared.dateList[indexPath.row]
+                cell.status = DataManager.shared.statusList[indexPath.row]
+            }
+            else if segmentedControl.selectedSegmentIndex == 1 {
+                cell.subject = DataManagerOffer.shared.clubNameList[indexPath.row]
+                cell.descrip = "Offering job in \(DataManagerOffer.shared.roleList[indexPath.row]) role for team Dota 2..."
+                cell.date = DataManagerOffer.shared.dateList[indexPath.row]
+                cell.status = DataManagerOffer.shared.statusList[indexPath.row]
+            }
+        }
         else if UserDefaults.standard.string(forKey: "userRole") == "Team"{
             rowsToDisplay = DataManager.shared.playerNameList
-        }
-        
-        cell.subject = rowsToDisplay[indexPath.row]
-        
-        if UserDefaults.standard.string(forKey: "userRole") == "Player"{
             if segmentedControl.selectedSegmentIndex == 0 {
-                cell.descrip = "You applied for the Dota2 team as a \(DataManager.shared.roleList[indexPath.row])"
+                cell.subject = DataManagerOffer.shared.playerNameList[indexPath.row]
+                cell.descrip = "You offer jobs for \(DataManagerOffer.shared.roleList[indexPath.row]) role positions"
+                cell.date = DataManagerOffer.shared.dateList[indexPath.row]
+                cell.status = DataManagerOffer.shared.statusList[indexPath.row]
             }
             else{
-                cell.descrip = "Offering job in \(DataManager.shared.roleList[indexPath.row]) role for team Dota 2..."
-            }
-        }
-        else if UserDefaults.standard.string(forKey: "userRole") == "Team"{
-            if segmentedControl.selectedSegmentIndex == 0 {
-                cell.descrip = "You offer jobs for \(DataManager.shared.roleList[indexPath.row]) role positions"
-            }
-            else{
+                cell.subject = DataManager.shared.playerNameList[indexPath.row]
                 cell.descrip = "Applying for a job for \(DataManager.shared.roleList[indexPath.row]) role in Dota2..."
+                cell.date = DataManager.shared.dateList[indexPath.row]
+                cell.status = DataManager.shared.statusList[indexPath.row]
             }
         }
         
-        
-        cell.date = DataManager.shared.dateList[indexPath.row]
-        cell.status = DataManager.shared.statusList[indexPath.row]
         cell.accessoryType = .disclosureIndicator
         cell.preservesSuperviewLayoutMargins = false
         cell.separatorInset = UIEdgeInsets.zero
@@ -62,6 +85,9 @@ class JobVacanciesViewController: UIViewController, UITableViewDataSource, UITab
             cell.statusView.textColor = #colorLiteral(red: 1, green: 0.6235294118, blue: 0.03921568627, alpha: 1)
         }
         else if cell.status == "Refused"{
+            cell.statusView.textColor = #colorLiteral(red: 1, green: 0.2705882353, blue: 0.2274509804, alpha: 1)
+        }
+        else if cell.status == "Rejected"{
             cell.statusView.textColor = #colorLiteral(red: 1, green: 0.2705882353, blue: 0.2274509804, alpha: 1)
         }
         else if cell.status == "Accepted"{
@@ -78,39 +104,58 @@ class JobVacanciesViewController: UIViewController, UITableViewDataSource, UITab
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let subjectTemp = rowsToDisplay[indexPath.row]
-        let statusTemp = DataManager.shared.statusList[indexPath.row]
-        let dateTemp = DataManager.shared.dateList[indexPath.row]
-        
         
         if UserDefaults.standard.string(forKey: "userRole") == "Player"{
             if segmentedControl.selectedSegmentIndex == 0 {
+                
+                let subjectTemp = DataManager.shared.clubNameList[indexPath.row]
+                let statusTemp = DataManager.shared.statusList[indexPath.row]
+                let dateTemp = DataManager.shared.dateList[indexPath.row]
+                
                 let descripTemp = "You apply for \(DataManager.shared.roleList[indexPath.row]) role in Dota 2 team \(rowsToDisplay[indexPath.row])"
                 UserDefaults.standard.set(descripTemp, forKey: "descrip")
                 UserDefaults.standard.set(1, forKey: "screen")
+                UserDefaults.standard.set(subjectTemp, forKey: "subject")
+                UserDefaults.standard.set(statusTemp, forKey: "status")
+                UserDefaults.standard.set(dateTemp, forKey: "date")
             }
             if segmentedControl.selectedSegmentIndex == 1 {
-                let descripTemp = "We are glad to offer you a job for \(DataManager.shared.roleList[indexPath.row]) role in our Dota 2 Division. We would like to invite you for interview job if you willing to accept the interview, we will set the schedule and appointment for further. Thank you."
+                let subjectTemp = DataManagerOffer.shared.clubNameList[indexPath.row]
+                let statusTemp = DataManagerOffer.shared.statusList[indexPath.row]
+                let dateTemp = DataManagerOffer.shared.dateList[indexPath.row]
+                let descripTemp = "We are glad to offer you a job for \(DataManagerOffer.shared.roleList[indexPath.row]) role in our Dota 2 Division. We would like to invite you for interview job if you willing to accept the interview, we will set the schedule and appointment for further. Thank you."
                 UserDefaults.standard.set(descripTemp, forKey: "descrip")
                 UserDefaults.standard.set(2, forKey: "screen")
+                UserDefaults.standard.set(subjectTemp, forKey: "subject")
+                UserDefaults.standard.set(statusTemp, forKey: "status")
+                UserDefaults.standard.set(dateTemp, forKey: "date")
             }
         }
         else if UserDefaults.standard.string(forKey: "userRole") == "Team"{
             if segmentedControl.selectedSegmentIndex == 0{
-                let descripTemp = "You offer jobs for \(DataManager.shared.roleList[indexPath.row]) positions in your Dota 2 team. Player is thinking about your offer. Please wait for the answer."
+                let subjectTemp = DataManagerOffer.shared.playerNameList[indexPath.row]
+                let statusTemp = DataManagerOffer.shared.statusList[indexPath.row]
+                let dateTemp = DataManagerOffer.shared.dateList[indexPath.row]
+                let descripTemp = "You offer jobs for \(DataManagerOffer.shared.roleList[indexPath.row]) positions in your Dota 2 team. Player is thinking about your offer. Please wait for the answer."
                 UserDefaults.standard.set(descripTemp, forKey: "descrip")
                 UserDefaults.standard.set(3, forKey: "screen")
+                UserDefaults.standard.set(subjectTemp, forKey: "subject")
+                UserDefaults.standard.set(statusTemp, forKey: "status")
+                UserDefaults.standard.set(dateTemp, forKey: "date")
             }
             if segmentedControl.selectedSegmentIndex == 1{
+                let subjectTemp = DataManager.shared.playerNameList[indexPath.row]
+                let statusTemp = DataManager.shared.statusList[indexPath.row]
+                let dateTemp = DataManager.shared.dateList[indexPath.row]
                 let descripTemp = "Apply for a job for role \(DataManager.shared.roleList[indexPath.row]) on your Dota 2 team. You can accept or reject these applications according to your team's expectations."
                 UserDefaults.standard.set(descripTemp, forKey: "descrip")
                 UserDefaults.standard.set(4, forKey: "screen")
+                UserDefaults.standard.set(subjectTemp, forKey: "subject")
+                UserDefaults.standard.set(statusTemp, forKey: "status")
+                UserDefaults.standard.set(dateTemp, forKey: "date")
             }
         }
-        
-        UserDefaults.standard.set(subjectTemp, forKey: "subject")
-        UserDefaults.standard.set(statusTemp, forKey: "status")
-        UserDefaults.standard.set(dateTemp, forKey: "date")
+    
         
         let viewController = storyboard?.instantiateViewController(withIdentifier: "vacancyDetail")
         self.navigationController?.pushViewController(viewController!, animated: true)

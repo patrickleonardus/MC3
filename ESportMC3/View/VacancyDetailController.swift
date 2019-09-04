@@ -101,14 +101,26 @@ class VacancyDetailController: UIViewController {
         
         else if UserDefaults.standard.bool(forKey: "userCheck") == true {
             
-            DataManager.shared.clubNameList.append((UserDefaults.standard.object(forKey: "nameJob") as! String))
-            DataManager.shared.roleList.append((UserDefaults.standard.object(forKey: "roleJob") as! String))
-            DataManager.shared.dateList.append("5/09/19")
-            DataManager.shared.statusList.append("Waiting for confirmation")
+            let alertNested = UIAlertController(title: "Successfully applied", message: "Please waiting for the response from the Team, you can check it from the Hub menu", preferredStyle: .alert)
+            alertNested.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+    
             
+            let alert = UIAlertController(title: nil, message: "You are about to apply to this job", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: { (action:UIAlertAction!) in
+                
+                DataManager.shared.clubNameList.append((UserDefaults.standard.object(forKey: "nameJob") as! String))
+                DataManager.shared.roleList.append((UserDefaults.standard.object(forKey: "roleJob") as! String))
+                DataManager.shared.dateList.append("5/09/19")
+                DataManager.shared.statusList.append("Waiting for confirmation")
+                
+                self.present(alertNested, animated: true)
+                
+                
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
         }
-        
-        
     }
 }
 

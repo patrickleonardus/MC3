@@ -90,6 +90,28 @@ class PlayerDetailController: UIViewController {
             
             self.present(alert, animated: true)
         }
+        
+        else if UserDefaults.standard.bool(forKey: "userCheck") == true {
+            
+            let alertNested = UIAlertController(title: "Successfully Hired", message: "Please waiting for the response from the Player, you can check it from the Hub menu", preferredStyle: .alert)
+            alertNested.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            
+            
+            let alert = UIAlertController(title: nil, message: "You are about to Hire this player", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: { (action:UIAlertAction!) in
+            
+            DataManagerOffer.shared.playerNameList.append((UserDefaults.standard.object(forKey: "nameForDetail") as? String)!)
+            DataManagerOffer.shared.dateList.append("5/09/19")
+            DataManagerOffer.shared.statusList.append("Waiting for confirmation")
+            DataManagerOffer.shared.roleList.append("All Role")
+            
+            self.present(alertNested, animated: true)
+                
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+        }
     }
 }
 

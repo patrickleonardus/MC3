@@ -1,20 +1,21 @@
 //
-//  dataManager.swift
-//  esportMC3
+//  DataManagerApplication.swift
+//  ESportMC3
 //
-//  Created by Aditya Sanjaya on 23/08/19.
-//  Copyright © 2019 Aditya. All rights reserved.
+//  Created by Patrick Leonardus on 04/09/19.
+//  Copyright © 2019 Patrick Leonardus. All rights reserved.
 //
 
 import Foundation
 
-class DataManager : NSObject{
-    static let shared = DataManager()
+
+class DataManagerOffer : NSObject{
+    static let shared = DataManagerOffer()
     
     var clubNameList : [String] = [
-        "RRQ Rex Regum Qeon",
-        "PT Evos Esports Indonesia",
-        "PT NXL Esports Indonesia"]
+        "Elite 8 Team",
+        "Shooting Star Team Indonesia",
+        "GIGA Team Indonesia"]
     
     var playerNameList : [String] = [
         "Randy Muhammad",
