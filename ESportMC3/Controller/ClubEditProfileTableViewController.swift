@@ -36,6 +36,10 @@ class ClubEditProfileTableViewController: UITableViewController{
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        UserDefaults.standard.set("teamEdit", forKey: "vcCheck")
+    }
+    
     func setTextView(){
         inputAboutTeam.delegate = self
         inputAboutTeam.text = "required"
@@ -123,8 +127,16 @@ class ClubEditProfileTableViewController: UITableViewController{
     
     
     @IBAction func btnSignout(_ sender: Any) {
-        UserDefaults.standard.set(false, forKey: "userCheck")
-        performSegue(withIdentifier: "signOutFromTeam", sender: self)
+        
+        let alert = UIAlertController(title: nil, message: "Are you sure, you want to sign out?", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { (action:UIAlertAction!) in
+            UserDefaults.standard.set(false, forKey: "userCheck")
+            self.performSegue(withIdentifier: "signOutFromTeam", sender: self)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
+        
     }
     
     @IBAction func btnSubmit(_ sender: Any) {

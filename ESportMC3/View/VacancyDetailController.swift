@@ -32,12 +32,12 @@ class VacancyDetailController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        self.tabBarController?.tabBar.isHidden = true
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-       
+       self.tabBarController?.tabBar.isHidden = false
     }
     
     func setUpUI(){
@@ -54,7 +54,18 @@ class VacancyDetailController: UIViewController {
         viewProfile.layer.cornerRadius = 15
         viewProfile.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
-        if UserDefaults.standard.string(forKey: "userRole") == "Player" {
+        if UserDefaults.standard.bool(forKey: "userCheck") == true{
+            if UserDefaults.standard.string(forKey: "userRole") == "Player"{
+                btnApplyOutlet.alpha = 1
+                btnApplyOutlet.layer.shadowColor = UIColor.black.cgColor
+                btnApplyOutlet.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
+                btnApplyOutlet.layer.shadowRadius = 8
+                btnApplyOutlet.layer.shadowOpacity = 1
+                btnApplyOutlet.layer.masksToBounds = false
+            }
+        }
+        
+        else if UserDefaults.standard.bool(forKey: "userCheck") == false {
             btnApplyOutlet.alpha = 1
             btnApplyOutlet.layer.shadowColor = UIColor.black.cgColor
             btnApplyOutlet.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
@@ -76,8 +87,29 @@ class VacancyDetailController: UIViewController {
     }
     
     @IBAction func btnApply(_ sender: Any) {
+        if UserDefaults.standard.bool(forKey: "userCheck") == false {
+            let alert = UIAlertController(title: nil, message: "You have to login first before use this feature", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Login", style: .default, handler: { (action:UIAlertAction!) in
+                self.performSegue(withIdentifier: "goToLoginPageFromJob", sender: self)
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+        }
+        
+        
+        else if UserDefaults.standard.bool(forKey: "userCheck") == true {
+            
+            DataManager.shared.clubNameList.append((UserDefaults.standard.object(forKey: "nameJob") as! String))
+            DataManager.shared.roleList.append((UserDefaults.standard.object(forKey: "roleJob") as! String))
+            DataManager.shared.dateList.append("5/09/19")
+            DataManager.shared.statusList.append("Waiting for confirmation")
+            
+        }
+        
+        
     }
-    
 }
 
 

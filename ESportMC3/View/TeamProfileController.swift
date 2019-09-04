@@ -187,7 +187,7 @@ extension TeamProfileController : UITableViewDelegate, UITableViewDataSource {
             
             let btnBrowse: UIButton = UIButton(frame: CGRect(x: frame.size.width - 160, y: 0, width: 160, height: 28))
             btnBrowse.setTitle("Add new vacancy ›", for: [])
-            btnBrowse.setTitleColor(UIColor(red: 20/255, green: 126/255, blue: 251/255, alpha: 1), for: [])
+            btnBrowse.setTitleColor(Colors().mainRed, for: [])
             btnBrowse.titleLabel!.font = UIFont.systemFont(ofSize: 15.0)
             btnBrowse.addTarget(self, action: #selector(addVacancy), for: .touchUpInside)
             

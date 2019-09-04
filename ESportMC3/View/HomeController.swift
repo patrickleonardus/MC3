@@ -90,10 +90,15 @@ class HomeController: UIViewController {
             }
         }
     }
+    
+   
+    
+    
     func setUpUI(){
         viewSearch.alpha = 0
         viewValidationDisplay.alpha = 0
         tableViewHome.allowsSelection = false
+        
         
     }
     
@@ -571,7 +576,7 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
                 
                 let btnBrowse: UIButton = UIButton(frame: CGRect(x: frame.size.width - 110, y: 0, width: 100, height: 28))
                 btnBrowse.setTitle("Browse All ›", for: [])
-                btnBrowse.setTitleColor(UIColor(red: 20/255, green: 126/255, blue: 251/255, alpha: 1), for: [])
+                btnBrowse.setTitleColor(Colors().mainRed, for: [])
                 btnBrowse.titleLabel!.font = UIFont.systemFont(ofSize: 15.0)
                 btnBrowse.addTarget(self, action: #selector(btnBrowse(sender:)), for: .touchUpInside)
                 
@@ -909,3 +914,27 @@ class snappingLayout: UICollectionViewFlowLayout {
     }
 }
 
+
+extension UITabBarController {
+    func setTabBarHidden(_ isHidden: Bool, animated: Bool, completion: (() -> Void)? = nil ) {
+        if (tabBar.isHidden == isHidden) {
+            completion?()
+        }
+        
+        if !isHidden {
+            tabBar.isHidden = false
+        }
+        
+        let height = tabBar.frame.size.height
+        let offsetY = view.frame.height - (isHidden ? 0 : height)
+        let duration = (animated ? 0.25 : 0.0)
+        
+        let frame = CGRect(origin: CGPoint(x: tabBar.frame.minX, y: offsetY), size: tabBar.frame.size)
+        UIView.animate(withDuration: duration, animations: {
+            self.tabBar.frame = frame
+        }) { _ in
+            self.tabBar.isHidden = isHidden
+            completion?()
+        }
+    }
+}

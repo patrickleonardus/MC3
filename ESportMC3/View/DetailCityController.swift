@@ -93,12 +93,22 @@ class DetailCityController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         cityTemp = city[indexPath.row]
-        performSegue(withIdentifier: "unwindToDetail", sender: self)
-        performSegue(withIdentifier: "unwindFromCity", sender: self)
-        performSegue(withIdentifier: "unwindFromCityToPlayer", sender: self)
-        performSegue(withIdentifier: "UnwindFromCityToEditClubProfile", sender: self)
-        performSegue(withIdentifier: "unwindFromCityToAddJob", sender: self)
         
+        if UserDefaults.standard.string(forKey: "vcCheck") == "playerRegis" {
+            performSegue(withIdentifier: "unwindToDetail", sender: self)
+        }
+        else if UserDefaults.standard.string(forKey: "vcCheck") == "teamRegis" {
+            performSegue(withIdentifier: "unwindFromCity", sender: self)
+        }
+        else if UserDefaults.standard.string(forKey: "vcCheck") == "playerEdit" {
+            performSegue(withIdentifier: "unwindFromCityToPlayer", sender: self)
+        }
+        else if UserDefaults.standard.string(forKey: "vcCheck") == "teamEdit" {
+            performSegue(withIdentifier: "UnwindFromCityToEditClubProfile", sender: self)
+        }
+        else if UserDefaults.standard.string(forKey: "vcCheck") == "addJob" {
+            performSegue(withIdentifier: "unwindFromCityToAddJob", sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
