@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TeamRegistrationController: UITableViewController {
+class TeamRegistrationController: UITableViewController{
 
     
     @IBOutlet weak var inputAboutTeam: UITextView!
@@ -26,8 +26,26 @@ class TeamRegistrationController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setUpUI()
+        setUpDelegate()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        UserDefaults.standard.set("teamRegis", forKey: "vcCheck")
+        self.tabBarController?.tabBar.isHidden = true
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func setUpDelegate(){
+        self.inputEmail.delegate = self
+        self.inputPassword.delegate = self
+        self.inputName.delegate = self
+        self.inputAlias.delegate = self
+        self.inputYear.delegate = self
+        self.inputPhone.delegate = self
     }
     
     func setUpUI(){
@@ -37,6 +55,7 @@ class TeamRegistrationController: UITableViewController {
         tableView.tableFooterView = UIView()
         setButton()
         setTextView()
+        
     }
     
     func setTextView(){
@@ -79,6 +98,17 @@ class TeamRegistrationController: UITableViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @objc func keyboardWillShow(notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height - 60
+            tableView.setBottomInset(to: keyboardHeight)
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        tableView.setBottomInset(to: 0.0)
+    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -90,10 +120,6 @@ class TeamRegistrationController: UITableViewController {
         }
         
         return UITableView.automaticDimension
-    }
-    
-    func dismissKeyboard(){
-        view.endEditing(true)
     }
     
     @IBAction func btnAddPict(_ sender: Any) {
@@ -144,5 +170,13 @@ extension TeamRegistrationController : UITextViewDelegate {
             inputAboutTeam.text = "required"
             inputAboutTeam.textColor = UIColor.lightGray
         }
+    }
+}
+
+extension TeamRegistrationController : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        textField.resignFirstResponder()
+        return true
     }
 }

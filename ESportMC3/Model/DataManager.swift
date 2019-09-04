@@ -11,32 +11,32 @@ import Foundation
 class DataManager : NSObject{
     static let shared = DataManager()
     
-    let clubNameList : [String] = [
+    var clubNameList : [String] = [
         "Rex Regum Qeon",
         "PT Evos Esports Indonesia",
         "PT NXL Esports Indonesia"]
     
-    let playerNameList : [String] = [
+    var playerNameList : [String] = [
         "Randy Muhammad",
         "Kenny Deo",
         "Muhammad Rizky"]
     
-    let statusList : [String] = [
-        "Menunggu konfirmasi",
-        "Ditolak",
-        "Diterima"]
+    var statusList : [String] = [
+        "Waiting for confirmation",
+        "Rejected",
+        "Accepted"]
     
-    let roleList : [String] = [
+    var roleList : [String] = [
         "Mid Laner",
         "Carry",
         "Off Laner",
         "Support"]
     
-    let dateList : [String] = [
+    var dateList : [String] = [
         "14/08/19",
         "15/08/19",
         "16/08/19"]
     
-    let player : Bool = true
+    var player : Bool = true
     
 }

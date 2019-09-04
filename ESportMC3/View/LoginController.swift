@@ -69,21 +69,41 @@ class LoginController: UIViewController {
     
     @IBAction func btnLogin(_ sender: Any) {
         
-        if UserDefaults.standard.string(forKey: "userRole") == "Player" {
-            if txtName.text == UserDefaults.standard.string(forKey: "emailPlayer") && txtPassword.text == UserDefaults.standard.string(forKey: "passwordPlayer") {
-                UserDefaults.standard.set(true, forKey: "userCheck")
-                performSegue(withIdentifier: "goHome", sender: self)
-            }
+        if txtName.text == UserDefaults.standard.string(forKey: "emailPlayer") && txtPassword.text == UserDefaults.standard.string(forKey: "passwordPlayer") {
+            UserDefaults.standard.set(true, forKey: "userCheck")
+            UserDefaults.standard.set("Player", forKey: "userRole")
+            performSegue(withIdentifier: "goHome", sender: self)
         }
         
+        else if txtName.text == UserDefaults.standard.string(forKey: "emailTeam") && txtPassword.text == UserDefaults.standard.string(forKey: "passwordTeam") {
+            UserDefaults.standard.set(true, forKey: "userCheck")
+            UserDefaults.standard.set("Team", forKey: "userRole")
+            performSegue(withIdentifier: "goHome", sender: self)
+        }
+    }
+    
+    @IBAction func btnCancel(_ sender: Any) {
+        
+        if UserDefaults.standard.string(forKey: "userRole") != "Team" {
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        else if UserDefaults.standard.string(forKey: "userRole") != "Player" {
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        else if UserDefaults.standard.string(forKey: "userRole") == "Player" {
+            self.dismiss(animated: true, completion: nil)
+            UserDefaults.standard.set(true, forKey: "userCheck")
+            
+        }
         else if UserDefaults.standard.string(forKey: "userRole") == "Team" {
-            if txtName.text == UserDefaults.standard.string(forKey: "emailTeam") && txtPassword.text == UserDefaults.standard.string(forKey: "passwordTeam") {
-                UserDefaults.standard.set(true, forKey: "userCheck")
-                performSegue(withIdentifier: "goHome", sender: self)
-            }
+            self.dismiss(animated: true, completion: nil)
+            UserDefaults.standard.set(true, forKey: "userCheck")
         }
         
     }
+    
     
 
 }

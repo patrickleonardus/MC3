@@ -58,7 +58,18 @@ class PlayerDetailController: UIViewController {
         profileBGView.layer.cornerRadius = 15
         profileBGView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
-        if UserDefaults.standard.string(forKey: "userRole") == "Team" {
+        if UserDefaults.standard.bool(forKey: "userCheck") == true {
+            if UserDefaults.standard.string(forKey: "userRole") == "Team" {
+                btnHireNow.alpha = 1
+                btnHireNow.layer.shadowColor = UIColor.black.cgColor
+                btnHireNow.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
+                btnHireNow.layer.shadowRadius = 8
+                btnHireNow.layer.shadowOpacity = 1
+                btnHireNow.layer.masksToBounds = false
+            }
+        }
+        
+        else if UserDefaults.standard.bool(forKey: "userCheck") == false {
             btnHireNow.alpha = 1
             btnHireNow.layer.shadowColor = UIColor.black.cgColor
             btnHireNow.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
@@ -66,9 +77,20 @@ class PlayerDetailController: UIViewController {
             btnHireNow.layer.shadowOpacity = 1
             btnHireNow.layer.masksToBounds = false
         }
-        
     }
-
+    
+    @IBAction func btnHire(_ sender: Any) {
+        if UserDefaults.standard.bool(forKey: "userCheck") == false {
+            let alert = UIAlertController(title: nil, message: "You have to login first before use this feature", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Login", style: .default, handler: { (action:UIAlertAction!) in
+                self.performSegue(withIdentifier: "goToLoginPageFromProfile", sender: self)
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+        }
+    }
 }
 
 extension PlayerDetailController: UITableViewDataSource, UITableViewDelegate {
@@ -124,3 +146,4 @@ extension PlayerDetailController: UITableViewDataSource, UITableViewDelegate {
     
     
 }
+

@@ -51,6 +51,7 @@ class PlayerEditTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        UserDefaults.standard.set("playerEdit", forKey: "vcCheck")
          navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
@@ -193,6 +194,20 @@ class PlayerEditTableViewController: UITableViewController {
     @IBAction func btnChoosePhoto(_ sender: Any) {
         setProfilePict()
     }
+    
+    @IBAction func btnSignOut(_ sender: Any) {
+        
+        let alert = UIAlertController(title: nil, message: "Are you sure, you want to sign out?", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { (action:UIAlertAction!) in
+            UserDefaults.standard.set(false, forKey: "userCheck")
+            self.performSegue(withIdentifier: "signOutFromPlayer", sender: self)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
+        
+    }
+    
     
 }
 

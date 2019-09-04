@@ -31,8 +31,29 @@ class PlayerRegistrationController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
         setUpUI()
+        setDelegate()
+        
+        NSLayoutConstraint.deactivate(tableView.constraints)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        UserDefaults.standard.set("playerRegis", forKey: "vcCheck")
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func setDelegate(){
+        inputDOB.delegate = self
+        inputGender.delegate = self
+        inputFullname.delegate = self
+        inputEmail.delegate = self
+        inputPassword.delegate = self
+        inputDesc.delegate = self
+        inputUsername.delegate = self
         
     }
     
@@ -45,6 +66,7 @@ class PlayerRegistrationController: UITableViewController {
         setDatePicker()
         setGenderPicker()
         setTextView()
+        
     }
     
     func setTextView(){
@@ -88,6 +110,18 @@ class PlayerRegistrationController: UITableViewController {
     @objc func cancelAction(){
         view.endEditing(true)
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height - 60
+            tableView.setBottomInset(to: keyboardHeight)
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        tableView.setBottomInset(to: 0.0)
     }
     
     func setDatePicker(){
@@ -200,5 +234,12 @@ extension PlayerRegistrationController : UITextViewDelegate {
             inputDesc.text = "required"
             inputDesc.textColor = UIColor.lightGray
         }
+    }
+}
+
+extension PlayerRegistrationController : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

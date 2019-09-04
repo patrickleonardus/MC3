@@ -76,15 +76,6 @@ class PlayerProfileController: UIViewController {
             
             viewUserValidation.alpha = 1
             
-            let alert = UIAlertController(title: nil, message: "To see and manage your profile you need to login first or create an account if you don't have it before", preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "Login", style: .default, handler: { (action:UIAlertAction!) in
-                self.performSegue(withIdentifier: "goToLoginPage", sender: self)
-            }))
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            
-            self.present(alert, animated: true)
-            
         }
         
     }

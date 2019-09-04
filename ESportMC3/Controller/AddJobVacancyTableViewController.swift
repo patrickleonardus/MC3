@@ -17,16 +17,8 @@ class AddJobVacancyTableViewController: UITableViewController {
     @IBOutlet weak var inputRequirement: UITextView!
     @IBOutlet weak var inputCity: UILabel!
     
-    
-    
     var cityTemp4 = ""
     
-    
-    
-    
-    //index dalam tiap tabel
-    //hint : -1 = textarea pertama dari atas, -2 = textarea kedua dari atas, -3 = Job Location label,sisanya index textfield dari 0
-    let indexPostJobTable = [[0,-1,-1,-2,-2,1],[2,3],[-3]]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,6 +27,10 @@ class AddJobVacancyTableViewController: UITableViewController {
         setTextView2()
         tableView.tableFooterView = UIView()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        UserDefaults.standard.set("addJob", forKey: "vcCheck")
     }
     
     func setTextView1(){

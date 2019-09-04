@@ -11,12 +11,26 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let navigationBarAppearace = UINavigationBar.appearance()
+        UINavigationBar.appearance().barTintColor = UIColor(red: 151/255, green: 3/255, blue: 25/255, alpha: 1)
+        UINavigationBar.appearance().tintColor = UIColor.white
+        navigationBarAppearace.isTranslucent = false
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        
+        
+        UITabBar.appearance().tintColor = UIColor.orange
+        UITabBar.appearance().backgroundColor = UIColor.black
+        UITabBar.appearance().barTintColor = UIColor.black
+        
+        
         return true
     }
 
